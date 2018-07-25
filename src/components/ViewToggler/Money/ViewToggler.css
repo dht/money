@@ -1,0 +1,26 @@
+.ViewToggler-container {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  padding: 15px 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  width: 40px;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #eee; }
+  .ViewToggler-container i {
+    color: white;
+    font-size: 30px;
+    position: relative;
+    left: -3px;
+    margin-bottom: 12px; }
+    .ViewToggler-container i:last-child {
+      margin-bottom: 0; }
+    .ViewToggler-container i:hover {
+      color: lightgoldenrodyellow; }
+    .ViewToggler-container i.selected {
+      color: gold; }
+
+/*# sourceMappingURL=ViewToggler.css.map */

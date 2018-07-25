@@ -1,0 +1,21 @@
+.Menu-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  margin: 5px;
+
+  &.down {
+    bottom: 5px;
+    left: 5px;
+  }
+
+  &.up {
+    top: 5px;
+    right: 20px;
+  }
+
+  div {
+    margin: 5px 7px;
+  }
+}

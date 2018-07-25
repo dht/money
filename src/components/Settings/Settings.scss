@@ -1,0 +1,47 @@
+.Settings-container {
+  width: 800px;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex: 1;
+  color: #eee;
+
+  .settings-list {
+    width: 200px;
+    box-shadow: inset 2px 0 2px rgba(0, 0, 0, 0.5);
+    background-color: #222;
+
+    ul {
+      padding: 10px 0;
+      margin: 0;
+      list-style-type: none;
+
+      li {
+        padding: 5px 10px;
+        margin: 0;
+        cursor: pointer;
+
+        &:hover {
+          background-color:#444;
+        }
+
+        &.selected {
+          background-color:#333;
+        }
+      }
+    }
+  }
+
+  .settings-content {
+    flex: 1;
+    padding: 10px 50px;
+    overflow: auto;
+
+    h1 {
+      font-size: 20px;
+      padding:0;
+      margin:0 0 20px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.Line-container {
+  display: flex;
+  align-items: center;
+
+  .date, .title, .plus, .minues {
+    padding: 0 5px;
+  }
+
+  .date {
+    padding-right: 20px;
+    width: 85px;
+    font-family: "Courier New", Courier, monospace;
+  }
+
+  .title {
+    flex: 1;
+  }
+
+  .actions {
+    margin-top: 5px;
+    padding: 0 10px;
+
+    .material-icons {
+      opacity: 0.6;
+    }
+  }
+}

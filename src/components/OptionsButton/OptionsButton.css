@@ -1,0 +1,32 @@
+.OptionsButton-container {
+  width: 35px;
+  height: 30px;
+  background-color: #333;
+  color: #eee;
+  text-shadow: 1px 1px 3px black;
+  border-right: 1px solid gray;
+  font-size: 16px;
+  text-align: center;
+  line-height: 32px;
+  font-weight: bold;
+  position: relative; }
+  .OptionsButton-container ul.options {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    bottom: 25px;
+    left: 0;
+    width: 130px;
+    padding: 0;
+    margin: 5px 0; }
+    .OptionsButton-container ul.options li {
+      padding: 2px 10px;
+      margin: 0;
+      color: #eee;
+      border-bottom: 1px solid gray; }
+      .OptionsButton-container ul.options li:hover {
+        background-color: #444; }
+  .OptionsButton-container.selected ul.options {
+    display: block; }
+
+/*# sourceMappingURL=OptionsButton.css.map */

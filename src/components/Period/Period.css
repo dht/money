@@ -1,0 +1,38 @@
+.Period-container {
+  padding: 10px 40px;
+  position: relative; }
+  .Period-container .row {
+    display: flex;
+    padding: 2px 0; }
+    .Period-container .row .category-title {
+      width: 170px; }
+    .Period-container .row.header {
+      border-bottom: 1px solid gray;
+      margin-bottom: 10px;
+      padding-bottom: 10px; }
+      .Period-container .row.header .th {
+        width: 100px;
+        text-align: center;
+        margin-left: 25px; }
+    .Period-container .row.summary {
+      border-top: 1px solid gray;
+      margin-top: 10px;
+      padding-top: 10px; }
+  .Period-container .actions {
+    margin-top: 20px;
+    display: flex;
+    flex: 1; }
+  .Period-container .top-actions {
+    position: absolute;
+    top: -40px;
+    left: 0; }
+  .Period-container.hide-a .a {
+    display: none; }
+  .Period-container.hide-ap .ap {
+    display: none; }
+  .Period-container.hide-p .p {
+    display: none; }
+  .Period-container.hide-pp .pp {
+    display: none; }
+
+/*# sourceMappingURL=Period.css.map */

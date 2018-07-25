@@ -1,0 +1,32 @@
+.CreateNew-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  flex-direction: column; }
+  .CreateNew-container .title {
+    font-size: 30px;
+    color: lightseagreen;
+    text-align: center; }
+  .CreateNew-container ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 40px 0; }
+    .CreateNew-container ul li {
+      background-color: #f3f3f3;
+      color: lightcoral;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-size: 24px;
+      margin: 5px;
+      cursor: pointer;
+      border: 1px solid #ccc; }
+      .CreateNew-container ul li:hover {
+        background-color: white;
+        border: 1px solid #ccc; }
+
+/*# sourceMappingURL=CreateNew.css.map */

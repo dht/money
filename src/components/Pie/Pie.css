@@ -1,0 +1,9 @@
+.Pie-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  background-color: white; }
+
+/*# sourceMappingURL=Pie.css.map */

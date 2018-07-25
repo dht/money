@@ -1,0 +1,75 @@
+.List-container {
+  display: flex;
+  flex-direction: column;
+  flex:1;
+  align-items: stretch;
+  position: relative;
+
+  input.main {
+    font-family: 'Rubik', sans-serif;
+    direction: rtl;
+    background-color:#333;
+    color:#fff;
+    font-size:20px;
+    padding:3px 10px;
+    border:none;
+    border-bottom:1px solid white;
+    margin: 5px 5px 5px;
+  }
+
+  .order {
+    position: absolute;
+    top:-10px;
+    left:10px;
+    width:10px;
+    height:10px;
+    cursor: pointer;
+  }
+
+  .actions {
+  }
+
+  .top {
+    display: flex;
+  }
+
+
+  ul {
+    padding:0;
+    margin:0;
+    overflow:auto;
+    flex:1;
+  }
+
+  .sortableHelper,  li.line {
+    direction: rtl;
+    color:white;
+    font-size:16px;
+    padding:0;
+    margin:0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+      .actions {
+      }
+    }
+
+    .time {
+      padding:0 5px;
+      font-family: "Courier New", Courier, monospace;
+    }
+
+    i {
+      margin-left:2px;
+      cursor: pointer;
+    }
+
+
+    .drag-it {
+      margin:0 3px;
+    }
+  }
+
+}

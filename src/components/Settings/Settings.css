@@ -1,0 +1,34 @@
+.Settings-container {
+  width: 800px;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  flex: 1;
+  color: #eee; }
+  .Settings-container .settings-list {
+    width: 200px;
+    box-shadow: inset 2px 0 2px rgba(0, 0, 0, 0.5);
+    background-color: #222; }
+    .Settings-container .settings-list ul {
+      padding: 10px 0;
+      margin: 0;
+      list-style-type: none; }
+      .Settings-container .settings-list ul li {
+        padding: 5px 10px;
+        margin: 0;
+        cursor: pointer; }
+        .Settings-container .settings-list ul li:hover {
+          background-color: #444; }
+        .Settings-container .settings-list ul li.selected {
+          background-color: #333; }
+  .Settings-container .settings-content {
+    flex: 1;
+    padding: 10px 50px;
+    overflow: auto; }
+    .Settings-container .settings-content h1 {
+      font-size: 20px;
+      padding: 0;
+      margin: 0 0 20px; }
+
+/*# sourceMappingURL=Settings.css.map */

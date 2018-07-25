@@ -1,0 +1,82 @@
+.Button-container {
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 18px;
+  background-color: #404040;
+  cursor: pointer;
+  color: #cccccc;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  flex: 1;
+  margin-left: 10px; }
+  .Button-container i {
+    font-size: 25px; }
+  .Button-container .title {
+    margin-right: 10px; }
+  .Button-container.icon {
+    background-color: transparent;
+    padding: 3px;
+    border-radius: 6px; }
+    .Button-container.icon .title {
+      display: none; }
+  .Button-container:hover {
+    background-color: #4d4d4d; }
+  .Button-container.working {
+    color: rgba(0, 0, 0, 0); }
+  .Button-container.blue {
+    background-color: #66d9ff;
+    color: #007399; }
+    .Button-container.blue:hover {
+      background-color: #33ccff; }
+    .Button-container.blue.working {
+      color: rgba(0, 0, 0, 0); }
+  .Button-container.pink {
+    background-color: #ff5a77;
+    color: white; }
+    .Button-container.pink:hover {
+      background-color: #ff8da1; }
+    .Button-container.pink.working {
+      color: rgba(0, 0, 0, 0); }
+  .Button-container.gold {
+    background-color: #998100;
+    color: gold; }
+    .Button-container.gold:hover {
+      background-color: #ccac00; }
+    .Button-container.gold.working {
+      color: rgba(0, 0, 0, 0); }
+  .Button-container .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-top: -12px;
+    margin-left: -12px; }
+  .Button-container.round {
+    margin-top: 30px;
+    border: 1px solid #333;
+    width: 44px;
+    height: 44px;
+    border-radius: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .Button-container.round i {
+      font-size: 40px;
+      color: #333; }
+    .Button-container.round:hover {
+      background-color: rgba(0, 0, 0, 0.2); }
+  .Button-container.light {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .Button-container.light i {
+      color: #333;
+      font-size: 30px; }
+    .Button-container.light:hover {
+      background-color: rgba(0, 0, 0, 0.05); }
+
+/*# sourceMappingURL=Button.css.map */

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,kBAAmB;EACjB,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,KAAK;EACjB,WAAW,EAAE,IAAI;EAEjB,0BAAQ;IACN,SAAS,EAAC,IAAI;IACd,OAAO,EAAC,KAAK",
+"sources": ["Percent.scss"],
+"names": [],
+"file": "Percent.css"
+}

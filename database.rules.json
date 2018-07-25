@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "permissions": {
+      "$bid": {
+        ".read": "false",
+        ".write": "auth !== null && !data.exists()"
+      }
+    },
+    "buckets": {
+      "$bid": {
+        ".read": "root.child('permissions').child($bid).child('owner').val() == auth.uid",
+        ".write": "root.child('permissions').child($bid).child('owner').val() == auth.uid"
+      }
+    }
+  }
+}

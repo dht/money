@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,sBAAuB;EACrB,IAAI,EAAE,CAAC;EACP,gBAAgB,EAAE,IAAI;EACtB,KAAK,EAAE,IAAI;EACX,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,WAAW,EAAE,MAAM;EACnB,eAAe,EAAE,MAAM;EACvB,SAAS,EAAE,IAAI;EAEf,6BAAO;IACL,SAAS,EAAE,IAAI;IACf,aAAa,EAAE,IAAI",
+"sources": ["Permissions.scss"],
+"names": [],
+"file": "Permissions.css"
+}

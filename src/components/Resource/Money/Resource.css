@@ -1,0 +1,13 @@
+.Resource-container {
+  width: 100px;
+  text-align: right;
+  margin-left: 10px;
+  font-family: "Courier New", Courier, monospace; }
+  .Resource-container.green {
+    color: lightgreen; }
+  .Resource-container.red {
+    color: pink; }
+  .Resource-container.clickable {
+    cursor: pointer; }
+
+/*# sourceMappingURL=Resource.css.map */

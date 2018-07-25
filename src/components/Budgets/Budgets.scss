@@ -1,0 +1,22 @@
+.Budgets-container {
+  display: flex;
+  flex-direction: row;
+  color: #f3f3f3f3;
+
+  .second {
+    max-width: 800px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+
+    div {
+      min-width: 80px;
+    }
+  }
+
+  .budget-title {
+    width:120px;
+  }
+}

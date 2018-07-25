@@ -1,0 +1,53 @@
+.Login-button-container {
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  background-color: lighten(deepskyblue, 20%);
+  margin: 10px 0;
+  cursor: pointer;
+  color: darken(deepskyblue, 20%);
+  border: none;
+  position: relative;
+
+  &:hover {
+    background-color: lighten(deepskyblue, 10%);
+  }
+
+  &.working {
+    color: rgba(0, 0, 0, 0);
+  }
+
+  &.pink {
+    background-color: darken(pink, 20%);
+    color: white;
+
+    &:hover {
+      background-color: darken(pink, 10%);
+    }
+    &.working {
+      color: rgba(0, 0, 0, 0);
+    }
+  }
+
+  &.gold {
+    background-color: darken(gold, 20%);
+    color: gold;
+
+    &:hover {
+      background-color: darken(gold, 10%);
+    }
+    &.working {
+      color: rgba(0, 0, 0, 0);
+    }
+  }
+
+  .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-top: -12px;
+    margin-left: -12px;
+  }
+}

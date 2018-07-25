@@ -1,0 +1,15 @@
+.Budgets-container {
+  display: flex;
+  flex-direction: row;
+  color: #f3f3f3f3; }
+  .Budgets-container .second {
+    max-width: 800px; }
+  .Budgets-container .row {
+    display: flex;
+    flex-direction: row; }
+    .Budgets-container .row div {
+      min-width: 80px; }
+  .Budgets-container .budget-title {
+    width: 120px; }
+
+/*# sourceMappingURL=Budgets.css.map */

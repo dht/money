@@ -1,0 +1,67 @@
+.Period-container {
+  padding: 10px 40px;
+  position: relative;
+
+  .row {
+    display: flex;
+    padding:2px 0;
+
+    .category-title {
+      width:170px;
+    }
+
+    &.header {
+      border-bottom: 1px solid gray;
+      margin-bottom: 10px;
+      padding-bottom:10px;
+
+      .th {
+        width: 100px;
+        text-align: center;
+        margin-left: 25px;
+      }
+    }
+
+    &.summary {
+      border-top: 1px solid gray;
+      margin-top: 10px;
+      padding-top:10px;
+    }
+  }
+
+  .actions {
+    margin-top:20px;
+    display: flex;
+    flex:1;
+  }
+
+  .top-actions {
+    position: absolute;
+    top:-40px;
+    left:0;
+  }
+
+  &.hide-a {
+    .a {
+      display: none;
+    }
+  }
+
+  &.hide-ap {
+    .ap {
+      display: none;
+    }
+  }
+
+  &.hide-p {
+    .p {
+      display: none;
+    }
+  }
+
+  &.hide-pp {
+    .pp {
+      display: none;
+    }
+  }
+}

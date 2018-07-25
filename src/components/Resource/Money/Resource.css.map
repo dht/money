@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,mBAAoB;EAClB,KAAK,EAAE,KAAK;EACZ,UAAU,EAAE,KAAK;EACjB,WAAW,EAAE,IAAI;EACjB,WAAW,EAAE,iCAAiC;EAE9C,yBAAQ;IACN,KAAK,EAAE,UAAU;EAGnB,uBAAM;IACJ,KAAK,EAAE,IAAI;EAGb,6BAAY;IACV,MAAM,EAAE,OAAO",
+"sources": ["Resource.scss"],
+"names": [],
+"file": "Resource.css"
+}

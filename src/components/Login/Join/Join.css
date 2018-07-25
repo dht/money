@@ -1,0 +1,15 @@
+.Join-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #99e5ff;
+  flex: 1;
+  align-items: center;
+  justify-content: center; }
+  .Join-container .error {
+    color: red; }
+  .Join-container .question {
+    margin: 30px 0 10px; }
+  .Join-container a {
+    color: dodgerblue; }
+
+/*# sourceMappingURL=Join.css.map */

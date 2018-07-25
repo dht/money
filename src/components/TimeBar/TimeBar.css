@@ -1,0 +1,26 @@
+.TimeBar-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .TimeBar-container div {
+    padding: 3px;
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 2px; }
+    .TimeBar-container div:hover {
+      background-color: rgba(0, 0, 0, 0.2); }
+    .TimeBar-container div.blank {
+      opacity: 0;
+      cursor: default; }
+    .TimeBar-container div.today {
+      border: 1px solid orange; }
+    .TimeBar-container div.future {
+      color: rgba(255, 255, 255, 0.3); }
+    .TimeBar-container div.selected {
+      background-color: orange;
+      color: #333; }
+
+/*# sourceMappingURL=TimeBar.css.map */

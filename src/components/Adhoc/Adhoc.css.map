@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAOE,8BAAc;EACZ,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,IAAI;EACT,IAAI,EAAC,IAAI",
+"sources": ["Adhoc.scss"],
+"names": [],
+"file": "Adhoc.css"
+}

@@ -1,0 +1,38 @@
+.Login-button-container {
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  background-color: #66d9ff;
+  margin: 10px 0;
+  cursor: pointer;
+  color: #007399;
+  border: none;
+  position: relative; }
+  .Login-button-container:hover {
+    background-color: #33ccff; }
+  .Login-button-container.working {
+    color: rgba(0, 0, 0, 0); }
+  .Login-button-container.pink {
+    background-color: #ff5a77;
+    color: white; }
+    .Login-button-container.pink:hover {
+      background-color: #ff8da1; }
+    .Login-button-container.pink.working {
+      color: rgba(0, 0, 0, 0); }
+  .Login-button-container.gold {
+    background-color: #998100;
+    color: gold; }
+    .Login-button-container.gold:hover {
+      background-color: #ccac00; }
+    .Login-button-container.gold.working {
+      color: rgba(0, 0, 0, 0); }
+  .Login-button-container .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    margin-top: -12px;
+    margin-left: -12px; }
+
+/*# sourceMappingURL=Button.css.map */

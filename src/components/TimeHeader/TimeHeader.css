@@ -1,0 +1,16 @@
+.TimeHeader-container {
+  padding: 20px;
+  position: relative; }
+  .TimeHeader-container .title {
+    font-size: 30px;
+    margin-bottom: 10px; }
+  .TimeHeader-container .subtitle {
+    font-size: 20px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.68); }
+  .TimeHeader-container .bar {
+    position: absolute;
+    left: 10px;
+    top: 20px; }
+
+/*# sourceMappingURL=TimeHeader.css.map */

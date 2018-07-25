@@ -1,0 +1,26 @@
+.Dashboard-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+
+  .title {
+    font-size: 30px;
+
+    &.empty {
+      color: rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  .startTime {
+    margin-bottom: 10px;
+  }
+
+  .duration {
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: 200;
+  }
+}

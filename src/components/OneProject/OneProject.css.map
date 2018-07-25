@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEI,sCAAU;EACR,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,IAAI;EACT,IAAI,EAAE,IAAI;EACV,OAAO,EAAE,GAAG;EACZ,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,GAAG",
+"sources": ["OneProject.scss"],
+"names": [],
+"file": "OneProject.css"
+}

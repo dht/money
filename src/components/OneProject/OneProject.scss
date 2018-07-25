@@ -1,0 +1,12 @@
+.OneProject-container {
+  .list {
+    >.actions {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      z-index: 999;
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}

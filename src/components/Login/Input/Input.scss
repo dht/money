@@ -1,0 +1,26 @@
+.Login-input-container {
+  box-sizing: border-box;
+
+  input {
+    font-family: 'Rubik', sans-serif;
+    direction: ltr;
+    background-color:#333;
+    color:#fff;
+    border:none;
+    border-bottom: 1px solid white;
+    box-sizing: border-box;
+    width:90%;
+    text-align: left;
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin:10px;
+
+
+    &.white {
+      background-color: #fff;
+      color:#333;
+      border-bottom: 1px solid #333;
+    }
+  }
+}
