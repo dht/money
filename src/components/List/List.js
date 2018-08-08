@@ -91,6 +91,10 @@ class List extends Component {
                     case 'sum':
                         this.props.updateItem(id, {sum: value});
                         break;
+
+                    case 'week':
+                        this.props.updateItem(id, {week: value, date: middleOfTheWeek(value)});
+                        break;
                 }
             }
         };

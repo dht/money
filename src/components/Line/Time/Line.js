@@ -29,7 +29,7 @@ export class Line extends Component {
                     {title}
                 </div>
                 {showDrilldown ? null :
-                    <div onClick={() => this.props.onEdit('sum', item)}>
+                    <div onClick={() => this.props.onEdit(middleColData, item)}>
                         <Resource value={middle} color={true}/>
                     </div>
                 }

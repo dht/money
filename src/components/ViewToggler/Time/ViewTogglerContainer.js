@@ -15,15 +15,15 @@ const mapStateToProps = (state, ownProps) => {
         boardId: currentBoardSelector(state),
         options: [
             {
-                id: 'WEEK',
-                icon: 'calendar_today',
-                title: 'הצג מבט שבועי',
-                visible: true,
-            },
-            {
                 id: 'AD_HOC',
                 icon: 'timer',
                 title: 'סשן',
+                visible: true,
+            },
+            {
+                id: 'WEEK',
+                icon: 'calendar_today',
+                title: 'הצג מבט שבועי',
                 visible: true,
             },
             {

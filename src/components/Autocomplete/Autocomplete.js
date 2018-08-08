@@ -36,7 +36,8 @@ class Autocomplete extends React.Component {
         // and they are initially empty because the Autosuggest is closed.
         this.state = {
             value: '',
-            suggestions: []
+            suggestions: [],
+            highlighted: '',
         };
     }
 
@@ -52,11 +53,19 @@ class Autocomplete extends React.Component {
         clearTimeout(this.timeout);
     }
 
+    clearHighlightedAutocomplete = () => {
+        const {highlighted} = this.state;
+        this.props.clearHighlightedAutocomplete(highlighted);
+    }
+
     keydown = (ev) => {
         ev.ignore = true;
 
         if (ev.which === 13) {
             this.suggestInN();
+        }
+        if (ev.which === 8 && ev.metaKey) {
+            this.clearHighlightedAutocomplete();
         }
     }
 
@@ -79,6 +88,7 @@ class Autocomplete extends React.Component {
     }
 
     onSuggestionSelected = (event, {suggestion}) => {
+        this.setState({value: suggestion.title});
         if (this.props.onSelect) {
             this.props.onSelect(suggestion);
             this.clearN();
@@ -92,10 +102,12 @@ class Autocomplete extends React.Component {
     };
 
     onBlur = () => {
-        const {value} = this.state;
-        if (this.props.onSelect) {
-            this.props.onSelect({title: value});
-        }
+        setTimeout(() => {
+            const {value} = this.state;
+            if (this.props.onSelect) {
+                this.props.onSelect({title: value});
+            }
+        }, 100);
     }
 
     // Autosuggest will call this function every time you need to update suggestions.
@@ -112,6 +124,12 @@ class Autocomplete extends React.Component {
             suggestions: []
         });
     };
+
+    onSuggestionHighlighted = ({suggestion}) => {
+        const {title} = suggestion || {};
+
+        this.setState({highlighted: title});
+    }
 
     render() {
         const {value, suggestions} = this.state;
@@ -134,6 +152,7 @@ class Autocomplete extends React.Component {
                     suggestions={suggestions}
                     onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
                     onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+                    onSuggestionHighlighted={this.onSuggestionHighlighted}
                     onSuggestionSelected={this.onSuggestionSelected}
                     getSuggestionValue={getSuggestionValue}
                     renderSuggestion={renderSuggestion}

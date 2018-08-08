@@ -57,7 +57,7 @@ export class New extends Component {
     }
 
     render() {
-        const {placeholder = "דקות", single} = this.props;
+        const {placeholder = "דקות", single, noAutoComplete} = this.props;
         const {title, sum, } = this.state;
 
         return (
@@ -69,7 +69,7 @@ export class New extends Component {
                     placeholder="רשומה חדשה"
                     onSelect={this.onSelect}
                     value={title}
-                    noAutoComplete={true}
+                    noAutoComplete={noAutoComplete}
                     id="first"
                 />
                 {single ? null :<Input placeholder={placeholder} onChange={(sum) => this.setState({sum})} value={sum}

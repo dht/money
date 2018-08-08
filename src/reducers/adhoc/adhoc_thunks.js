@@ -96,6 +96,24 @@ export const addAutoComplete = (title = '') => {
     }
 }
 
+
+export const removeAutoComplete = (title) => {
+
+    return (dispatch, getState) => {
+        let state = getState(),
+            autocomplete = adHocAutoCompleteSelector(state) || [];
+
+        const arr = autocomplete.filter(item => item.title === title);
+
+        if (!arr || arr.length === 0 || !arr[0].id)
+            return;
+
+        const id = arr[0].id;
+        api.removeAdhocAutoComplete(id)
+        dispatch(actions.removeAutoComplete(id));
+    }
+}
+
 export const clearAdhoc = (title) => {
 
     return (dispatch) => {
@@ -103,3 +121,4 @@ export const clearAdhoc = (title) => {
         dispatch(actions.setLines({}))
     }
 }
+

@@ -4,6 +4,7 @@ import Autocomplete from './Autocomplete';
 import {autocompleteSelector} from "../../selectors/autocompleteSelector";
 import {adHocAutoCompleteSelector} from "../../selectors/adhocAutoCompleteSelector";
 import {isAdhocSelector} from "../../selectors/appStateSelector";
+import {removeAutoComplete} from "../../reducers/adhoc/adhoc_thunks";
 
 const mapStateToProps = (state, ownProps) => {
 
@@ -24,7 +25,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        method: () => {
+        clearHighlightedAutocomplete: (title) => {
+            dispatch(removeAutoComplete(title))
         },
     }
 }

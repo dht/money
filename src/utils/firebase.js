@@ -89,10 +89,17 @@ export const addAdhocAutoComplete = (data) => {
     const ref = adhocAutoCompleteRef.push(),
         key = ref.key;
 
+    data.id = key;
+
     return ref.set(data)
         .then(() => {
             return {key};
         });
+}
+
+export const removeAdhocAutoComplete = (id) => {
+    const ref = adhocAutoCompleteRef.child(id);
+    return ref.remove();
 }
 
 export const clearAdhoc = () => {

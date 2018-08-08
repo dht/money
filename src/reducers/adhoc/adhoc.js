@@ -16,6 +16,7 @@ export const ActionTypes = {
     SET_CURRENT_INDEX: 'SET_CURRENT_INDEX',
     SET_AUTOCOMPLETE: 'SET_AUTOCOMPLETE',
     ADD_AUTOCOMPLETE: 'ADD_AUTOCOMPLETE',
+    REMOVE_AUTOCOMPLETE: 'REMOVE_AUTOCOMPLETE',
 };
 
 const line = (state, action) => {
@@ -56,6 +57,8 @@ const lines = (state, action) => {
     }
 }
 const autoComplete = (state, action) => {
+    let newState;
+
     switch (action.type) {
         case ActionTypes.SET_AUTOCOMPLETE:
             return action.value;
@@ -65,6 +68,11 @@ const autoComplete = (state, action) => {
                 ...state,
                 [action.id]: action.value
             };
+
+        case ActionTypes.REMOVE_AUTOCOMPLETE:
+            newState = {...state};
+            delete newState[action.id];
+            return newState
 
         default:
             return state
@@ -102,6 +110,7 @@ const adhoc = (state = initialState, action) => {
 
         case ActionTypes.SET_AUTOCOMPLETE:
         case ActionTypes.ADD_AUTOCOMPLETE:
+        case ActionTypes.REMOVE_AUTOCOMPLETE:
             return {
                 ...state,
                 autoComplete: autoComplete(state.autoComplete, action)

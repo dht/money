@@ -13,12 +13,19 @@ export const adHocAutoCompleteSelector = createSelector(
     autoComplete => {
         const keys = Object.keys(autoComplete);
 
-        const arr = keys.map(key => autoComplete[key].title)
-            .sort();
+        let titles = {};
 
-        return _.uniq(arr).map((title, index) => ({
-            id: index,
-            title,
-        }));
+        return keys
+            .map(key => {
+                if (titles[key]) return null;
+
+                titles[key] = true;
+
+                return {
+                    id: key,
+                    title: autoComplete[key].title
+                }
+            })
+            .filter(item => item)
     }
 )

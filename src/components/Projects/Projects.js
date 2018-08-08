@@ -19,7 +19,7 @@ export class Projects extends Component {
                     <WeekHeader onChange={() => {
                     }}/>
 
-                    <List withSum={true}/>
+                    <List withSum={true} noAutoComplete={true}/>
 
                     <div className="hide-projects">
                         <Toggle

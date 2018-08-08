@@ -66,3 +66,11 @@ export const addAutoComplete = (id, value) => {
         value,
     }
 }
+
+export const removeAutoComplete = (id) => {
+
+    return {
+        type: ActionTypes.REMOVE_AUTOCOMPLETE,
+        id,
+    }
+}
