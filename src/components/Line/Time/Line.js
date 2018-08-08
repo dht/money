@@ -9,7 +9,7 @@ export class Line extends Component {
     }
 
     render() {
-        const {item, extraInfo, done, showDrilldown, middleColData} = this.props,
+        const {item, extraInfo, done, showDrilldown, middleColData = 'sum'} = this.props,
             {title, sum, order, startTime} = item || {},
             classNames = ['Line-container','line'];
 
