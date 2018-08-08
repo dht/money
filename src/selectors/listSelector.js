@@ -16,6 +16,7 @@ export const listByDateSelector = createSelector(
                 item.week = moment(item.date).week()
                 item.month = moment(item.date).month() + 1
                 item.period = weekToPeriod(item.week);
+                item.order = item.order || Math.random() * 100;
                 return item;
             })
             .sort(function (a, b) {
