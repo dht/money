@@ -32,7 +32,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
             item.date = middleOfTheWeek(item.week);
             item.sum = 20;
             item.project = ownProps.projectId;
-            dispatch(addItem(swapToProjectOrder(item)))
+            item.orderProject = item.order;
+            item.order = Math.random() * 100;
+
+            dispatch(addItem(item));
         },
         updateItem: (id, data, immediate, noChangeLog) => {
             dispatch(updateItem(id, swapToProjectOrder(data), immediate, noChangeLog))
