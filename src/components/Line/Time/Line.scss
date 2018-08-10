@@ -13,13 +13,13 @@
   }
 
   .date {
-    padding-right: 20px;
+    padding-left: 20px;
     width: 85px;
     font-family: "Courier New", Courier, monospace;
   }
 
   .extra {
-    padding-right: 5px;
+    padding-left: 5px;
     width: 60px;
     font-size: 17px;
     font-family: "Courier New", Courier, monospace;
@@ -35,6 +35,20 @@
 
     .material-icons {
       opacity: 0.6;
+    }
+  }
+}
+
+.App.rtl {
+  .Line-container {
+    .date {
+      padding-left:0;
+      padding-right: 20px;
+    }
+
+    .extra {
+      padding-right: 0;
+      padding-left: 5px;
     }
   }
 }

@@ -1,21 +1,22 @@
-import React, {Component} from 'react';
-import './Settings.css';
+import React, { Component } from "react";
+import "./Settings.css";
 import Modal from "../Modal/Modal";
 import AllScreen from "./_settingsScreens";
+import PropTypes from "prop-types";
+import Period from "../Period/Period";
 
 export class Settings extends Component {
-
     state = {
-        selectedId: 'CATEGORIES',
-    }
+        selectedId: "CATEGORIES"
+    };
 
     _getOption() {
-        const {options} = this.props,
-            {selectedId} = this.state;
+        const { options } = this.props,
+            { selectedId } = this.state;
 
         return options.reduce((output, option) => {
             return option.id === selectedId ? option : output;
-        })
+        });
     }
 
     renderInnerSettings() {
@@ -25,50 +26,57 @@ export class Settings extends Component {
 
         const Comp = AllScreen[selectedOption.screen];
 
-        return <Comp/>;
+        return <Comp />;
     }
 
-    selectOption = ({id}) => {
-        this.setState({selectedId: id});
-    }
+    selectOption = ({ id }) => {
+        this.setState({ selectedId: id });
+    };
 
     renderList() {
-        const {options} = this.props,
-            {selectedId} = this.state;
+        const { i18n } = this.context;
 
-        return <ul>
-            {
-                options.map(option => {
-                    const {id, title} = option,
-                        className = id === selectedId ? 'selected' : '';
+        const { options } = this.props,
+            { selectedId } = this.state;
 
-                    return <li key={id}
-                               className={className}
-                               onClick={() => this.selectOption(option)}>
-                        {title}
-                    </li>;
-                })
-            }
-        </ul>;
+        return (
+            <ul>
+                {options.map(option => {
+                    const { id, title } = option,
+                        className = id === selectedId ? "selected" : "";
+
+                    return (
+                        <li
+                            key={id}
+                            className={className}
+                            onClick={() => this.selectOption(option)}
+                        >
+                            {title}
+                        </li>
+                    );
+                })}
+            </ul>
+        );
     }
 
     render() {
+        const { i18n } = this.context;
+
         return (
-            <Modal onClose={this.props.onClose} title={'הגדרות'}>
+            <Modal onClose={this.props.onClose} title={i18n.settings}>
                 <div className="Settings-container">
-                    <div className="settings-list">
-                        {this.renderList()}
-                    </div>
+                    <div className="settings-list">{this.renderList()}</div>
                     <div className="settings-content">
-                        {
-                            this.renderInnerSettings()
-                        }
+                        {this.renderInnerSettings()}
                     </div>
                 </div>
             </Modal>
-
         );
     }
 }
+
+Settings.contextTypes = {
+    i18n: PropTypes.object,
+};
 
 export default Settings;

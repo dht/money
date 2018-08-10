@@ -1,3 +1,3 @@
-import { createSelector } from 'reselect'
+import { createSelector } from "reselect";
 
 export const plannedBudgetSelector = state => state.plannedBudgets;

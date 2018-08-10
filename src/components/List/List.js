@@ -1,49 +1,46 @@
-import React, {Component} from 'react';
-import './List.css';
+import React, { Component } from "react";
+import "./List.css";
 import ReactSortable from "react-sortablejs";
-import {getNewOrder, lastOrder} from "../../utils/items";
-import {middleOfTheWeek, parseDate} from "../../utils/date";
+import { getNewOrder, lastOrder } from "../../utils/items";
+import { middleOfTheWeek, parseDate } from "../../utils/dateAndMoney";
 import Line from "../Line/Line";
 import New from "../New/New";
 import Categories from "../Categories/Categories";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import alerts from "../../utils/alerts";
-
 
 class List extends Component {
     state = {
         showTimer: false,
-        timerTaskIndex: 0,
-    }
+        timerTaskIndex: 0
+    };
 
     componentDidMount() {
-        window.addEventListener('keydown', this.keydown);
+        window.addEventListener("keydown", this.keydown);
 
         setTimeout(() => {
-            const element = document.querySelector('input');
+            const element = document.querySelector("input");
             if (element) {
                 element.focus();
             }
-        }, 0)
+        }, 0);
     }
-
 
     componentWillUnmount() {
-        window.removeEventListener('keydown', this.keydown)
+        window.removeEventListener("keydown", this.keydown);
     }
 
-    addItem = ({isCredit = false, title, sum}) => {
-        const {items, week} = this.props,
+    addItem = ({ isCredit = false, title, sum }) => {
+        const { items, week } = this.props,
             order = lastOrder(items) + 1;
 
         const date = middleOfTheWeek(week);
 
-        this.props.addItem({title, date, sum, order, isCredit, week});
+        this.props.addItem({ title, date, sum, order, isCredit, week });
     };
 
-
-    keydown = (ev) => {
-        let {currentIndex} = this.props;
+    keydown = ev => {
+        let { currentIndex } = this.props;
 
         if (ev.ignore) return;
 
@@ -56,71 +53,83 @@ class List extends Component {
         }
     };
 
-    onToggleCredit = (item) => {
-        const {id, isCredit} = item;
+    onToggleCredit = item => {
+        const { id, isCredit } = item;
 
-        this.props.updateItem(id, {isCredit: !isCredit}, true);
-    }
+        this.props.updateItem(id, { isCredit: !isCredit }, true);
+    };
 
     onEdit = (which, item) => {
-        let defaultValue = item[which],
-            {id} = item;
+        const { i18n } = this.context;
 
-        if (which === 'date') {
-            defaultValue = '';
+        let defaultValue = item[which],
+            { id } = item;
+
+        if (which === "date") {
+            defaultValue = "";
         }
 
         const options = {
-            yesText: 'שמירה',
+            yesText: i18n.save,
             message: which,
             value: defaultValue,
-            callback: (value) => {
-
+            callback: value => {
                 if (!value) return;
 
                 switch (which) {
-                    case 'date':
+                    case "date":
                         value = parseDate(value);
-                        this.props.updateItem(id, {date: value});
+                        this.props.updateItem(id, { date: value });
                         break;
 
-                    case 'title':
-                        this.props.updateItem(id, {title: value});
+                    case "title":
+                        this.props.updateItem(id, { title: value });
                         break;
 
-                    case 'sum':
-                        this.props.updateItem(id, {sum: value});
+                    case "sum":
+                        this.props.updateItem(id, { sum: value });
                         break;
 
-                    case 'week':
-                        this.props.updateItem(id, {week: value, date: middleOfTheWeek(value)});
+                    case "week":
+                        this.props.updateItem(id, {
+                            week: value,
+                            date: middleOfTheWeek(value)
+                        });
                         break;
                 }
             }
         };
 
         alerts.prompt(options);
-    }
-
-    deleteItem = ({id}) => {
-        alerts.confirm('are you sure?', answer => {
-            if (answer) {
-                this.props.removeItem(id);
-            }
-        }, 'מחיקה')
     };
 
-    duplicateItem = (item) => {
+    deleteItem = ({ id }) => {
+        const { i18n } = this.context;
+
+        alerts.confirm(
+            i18n.areYouSure,
+            answer => {
+                if (answer) {
+                    this.props.removeItem(id);
+                }
+            },
+            i18n.delete
+        );
+    };
+
+    duplicateItem = item => {
+        const { i18n } = this.context;
+
         alerts.prompt({
-            yesText: 'אוקיי',
-            message: 'every how many weeks?',
-            value: '',
-            callback: (weeks) => {
+            yesText: i18n.ok,
+            message: i18n.everyHowManyWeeks,
+            value: "",
+            callback: weeks => {
                 alerts.prompt({
-                    yesText: 'אוקיי',
-                    message: 'occurrences?',
-                    value: '',
-                    callback: (occurrences) => {
+                    yesText: i18n.ok,
+                    message: i18n.occurrences,
+                    value: "",
+                    callback: occurrences => {
                         if (weeks && occurrences) {
                             this.props.duplicateItem(item, weeks, occurrences);
                         }
@@ -131,82 +140,82 @@ class List extends Component {
     };
 
     onSwap = (order, sortable, evt) => {
-        let {items} = this.props,
-            {oldIndex, newIndex} = evt;
+        let { items } = this.props,
+            { oldIndex, newIndex } = evt;
 
         if (oldIndex === newIndex) return;
 
-        const item = items[oldIndex] ||{},
-            {id} = item;
+        const item = items[oldIndex] || {},
+            { id } = item;
 
         const delta = newIndex > oldIndex ? +1 : 0;
 
-        const newOrder = getNewOrder(items, newIndex, delta)
+        const newOrder = getNewOrder(items, newIndex, delta);
 
-        this.props.updateItem(id, {order: newOrder}, true, true);
-    }
+        this.props.updateItem(id, { order: newOrder }, true, true);
+    };
 
-    postponeItem = (item) => {
+    postponeItem = item => {
+        const { i18n } = this.context;
+
         const options = {
-            yesText: 'שמירה',
-            message: 'to which week?',
+            yesText: i18n.save,
+            message: i18n.toWhichWeek,
             value: item.week,
-            callback: (week) => {
-
+            callback: week => {
                 if (!week) return;
 
                 const date = middleOfTheWeek(week);
 
                 if (!this.props.postponeItem) {
-                    this.props.updateItem(item.id, {week, date}, true, true);
+                    this.props.updateItem(item.id, { week, date }, true, true);
                 } else {
                     // multi postpone in project screen
-                    this.props.postponeItem(item.id, item.week, week)
-
+                    this.props.postponeItem(item.id, item.week, week);
                 }
             }
         };
 
         alerts.prompt(options);
-    }
+    };
 
     renderItem(item, index) {
-        let {currentIndex} = this.props;
+        let { currentIndex } = this.props;
 
-        const done = (index < currentIndex);
+        const done = index < currentIndex;
 
-        return <Line item={item} key={item.id}
-                     done={done}
-                     extraInfo={this.props.extraInfo}
-                     showDrilldown={this.props.showDrilldown}
-                     onEdit={this.onEdit}
-                     middleColData={this.props.middleColData}
-                     deleteItem={this.deleteItem}
-                     duplicateItem={this.duplicateItem}
-                     postponeItem={this.postponeItem}
-                     onDrilldown={this.props.drilldown}
-                     onToggleCredit={this.onToggleCredit}
-        />
+        return (
+            <Line
+                item={item}
+                key={item.id}
+                done={done}
+                extraInfo={this.props.extraInfo}
+                showDrilldown={this.props.showDrilldown}
+                onEdit={this.onEdit}
+                middleColData={this.props.middleColData}
+                deleteItem={this.deleteItem}
+                duplicateItem={this.duplicateItem}
+                postponeItem={this.postponeItem}
+                onDrilldown={this.props.drilldown}
+                onToggleCredit={this.onToggleCredit}
+            />
+        );
     }
 
     render() {
-        const {items, placeholder, noAutoComplete} = this.props;
-
+        const { items, placeholder, noAutoComplete } = this.props;
 
         return (
             <div className="List-container">
                 <div className="top">
-                    <New save={this.addItem}
-                         noAutoComplete={noAutoComplete}
-                         placeholder={placeholder}
+                    <New
+                        save={this.addItem}
+                        noAutoComplete={noAutoComplete}
+                        placeholder={placeholder}
                     />
                 </div>
-                <ReactSortable
-                    tag="ul"
-                    onChange={this.onSwap}>
-                    {
-                        items.map((item, index) => this.renderItem(item, index))
-                    }
+                <ReactSortable tag="ul" onChange={this.onSwap}>
+                    {items.map((item, index) => this.renderItem(item, index))}
                 </ReactSortable>
             </div>
         );
@@ -214,7 +223,7 @@ class List extends Component {
 }
 
 List.contextTypes = {
-    i18n: PropTypes.object,
+    i18n: PropTypes.object
 };
 
 export default List;

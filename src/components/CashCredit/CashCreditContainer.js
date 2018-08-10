@@ -1,22 +1,21 @@
 import React from "react";
-import {connect} from "react-redux";
-import CashCredit from './CashCredit';
+import { connect } from "react-redux";
+import CashCredit from "./CashCredit";
 
 const mapStateToProps = (state, ownProps) => {
-    const {appState} = state,
-        {currency} = appState;
+    const { appState } = state,
+        { currency } = appState;
 
     return {
-        currency,
+        currency
     };
-}
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        method: () => {
-        },
-    }
-}
+        method: () => {}
+    };
+};
 
 export default connect(
     mapStateToProps,

@@ -42,7 +42,6 @@
   }
 
   .sortableHelper,  li.line {
-    direction: rtl;
     color:white;
     font-size:16px;
     padding:0;
@@ -72,4 +71,12 @@
     }
   }
 
+}
+
+.App.rtl {
+  .List-container {
+    .sortableHelper,  li.line {
+      direction: rtl;
+    }
+  }
 }

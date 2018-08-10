@@ -1,15 +1,13 @@
-import React, {Component} from 'react';
-import './Menu.css';
+import React, { Component } from "react";
+import "./Menu.css";
 
 export class Menu extends Component {
-
-    state = {
-    }
+    state = {};
 
     render() {
-        const {down} = this.props;
+        const { down } = this.props;
 
-        const position = down ? 'down' : 'up';
+        const position = down ? "down" : "up";
 
         return (
             <div className={`Menu-container ${position}`}>

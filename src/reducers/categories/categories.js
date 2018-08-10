@@ -1,13 +1,12 @@
-export const initialState = {
-};
+export const initialState = {};
 
 export const ActionTypes = {
-    CATEGORY_SET_ITEMS: 'CATEGORY_SET_ITEMS',
-    CATEGORY_ADD_ITEM: 'CATEGORY_ADD_ITEM',
-    CATEGORY_UPDATE_ITEM: 'CATEGORY_UPDATE_ITEM',
-    CATEGORY_REMOVE_ITEM: 'CATEGORY_REMOVE_ITEM',
-    CATEGORY_ADD_NAME: 'CATEGORY_ADD_NAME',
-    CATEGORY_REMOVE_NAME: 'CATEGORY_REMOVE_NAME',
+    CATEGORY_SET_ITEMS: "CATEGORY_SET_ITEMS",
+    CATEGORY_ADD_ITEM: "CATEGORY_ADD_ITEM",
+    CATEGORY_UPDATE_ITEM: "CATEGORY_UPDATE_ITEM",
+    CATEGORY_REMOVE_ITEM: "CATEGORY_REMOVE_ITEM",
+    CATEGORY_ADD_NAME: "CATEGORY_ADD_NAME",
+    CATEGORY_REMOVE_NAME: "CATEGORY_REMOVE_NAME"
 };
 
 const names = (state, action) => {
@@ -18,17 +17,17 @@ const names = (state, action) => {
             return {
                 ...state,
                 [action.nameId]: action.value
-            }
+            };
 
         case ActionTypes.CATEGORY_REMOVE_NAME:
-            newState = {...state};
+            newState = { ...state };
             delete newState[action.nameId];
             return newState;
 
         default:
-            return state
+            return state;
     }
-}
+};
 const item = (state, action) => {
     switch (action.type) {
         case ActionTypes.CATEGORY_ADD_ITEM:
@@ -38,19 +37,19 @@ const item = (state, action) => {
             return {
                 ...state,
                 ...action.value
-            }
+            };
 
         case ActionTypes.CATEGORY_ADD_NAME:
         case ActionTypes.CATEGORY_REMOVE_NAME:
             return {
                 ...state,
                 names: names(state.names, action)
-            }
+            };
 
         default:
-            return state
+            return state;
     }
-}
+};
 
 const items = (state = initialState, action) => {
     let newState;
@@ -66,18 +65,16 @@ const items = (state = initialState, action) => {
             return {
                 ...state,
                 [action.id]: item(state[action.id], action)
-            }
+            };
 
         case ActionTypes.CATEGORY_REMOVE_ITEM:
-            newState = {...state};
+            newState = { ...state };
             delete newState[action.id];
             return newState;
 
         default:
-            return state
+            return state;
     }
-
-}
+};
 
 export default items;
-

@@ -1,16 +1,11 @@
-import React, {Component} from 'react';
-import './Dashboard.css';
+import React, { Component } from "react";
+import "./Dashboard.css";
 
 export class Dashboard extends Component {
-
-    state = {
-    }
+    state = {};
 
     render() {
-        return (
-            <div className="Dashboard-container">
-            </div>
-        );
+        return <div className="Dashboard-container" />;
     }
 }
 

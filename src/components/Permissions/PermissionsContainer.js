@@ -1,18 +1,16 @@
 import React from "react";
-import {connect} from "react-redux";
-import Permissions from './Permissions';
+import { connect } from "react-redux";
+import Permissions from "./Permissions";
 
 const mapStateToProps = (state, ownProps) => {
-    return {
-    };
-}
+    return {};
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        method: () => {
-        },
-    }
-}
+        method: () => {}
+    };
+};
 
 export default connect(
     mapStateToProps,

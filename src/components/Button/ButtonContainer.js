@@ -1,18 +1,16 @@
 import React from "react";
-import {connect} from "react-redux";
-import Button from './Button';
+import { connect } from "react-redux";
+import Button from "./Button";
 
 const mapStateToProps = (state, ownProps) => {
-    return {
-    };
-}
+    return {};
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        method: () => {
-        },
-    }
-}
+        method: () => {}
+    };
+};
 
 export default connect(
     mapStateToProps,

@@ -8,6 +8,9 @@ import WeekHeader from "../TimeHeader/AdhocHeaderContainer";
 import ViewToggler from "../ViewToggler/ViewToggler";
 import Button from "../Button/Button";
 import alerts from "../../utils/alerts";
+import classNames from "classnames";
+import PropTypes from "prop-types";
+import App from "../App";
 
 class Adhoc extends Component {
     state = {};
@@ -21,32 +24,29 @@ class Adhoc extends Component {
     }
 
     onClear = () => {
+        const { i18n } = this.context;
+
         alerts.confirm(
-            "are you sure?",
+            i18n.areYouSure,
             answer => {
                 if (answer) {
                     this.props.clearAdhoc();
                 }
             },
-            "איפוס"
+            i18n.resetList
         );
     };
 
     render() {
-        const { currentIndex, week, showList } = this.props,
-            listClassNames = ["list"];
-
-        if (!showList) {
-            listClassNames.push("hide");
-        }
+        const { currentIndex, week, showList } = this.props;
 
         return (
             <div
-                className={`Adhoc-container page-structure ${
-                    currentIndex % 2 === 0 ? "alternative" : ""
-                }`}
+                className={classNames("Adhoc-container", "page-structure", {
+                    alternative: currentIndex % 2 === 0
+                })}
             >
-                <div className={listClassNames.join(" ")}>
+                <div className={classNames("list", { hide: !showList })}>
                     <WeekHeader onChange={this.props.onWeekChange} />
 
                     <List week={week} withSum={true} />
@@ -66,5 +66,10 @@ class Adhoc extends Component {
         );
     }
 }
+
+Adhoc.contextTypes = {
+    i18n: PropTypes.object,
+    mode: PropTypes.string
+};
 
 export default Adhoc;

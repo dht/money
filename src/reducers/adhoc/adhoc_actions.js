@@ -1,76 +1,66 @@
-import {ActionTypes} from "./adhoc";
+import { ActionTypes } from "./adhoc";
 
-
-export const setLines = (value) => {
-
+export const setLines = value => {
     return {
         type: ActionTypes.ADHOC_SET_LINES,
-        value,
-    }
-}
+        value
+    };
+};
 
 export const addLine = (id, value) => {
-
     return {
         type: ActionTypes.ADHOC_ADD_LINE,
         id,
-        value,
-
-    }
-}
+        value
+    };
+};
 export const changeLine = (id, value) => {
     return {
         type: ActionTypes.ADHOC_CHANGE_LINE,
         id,
-        value,
-    }
-}
+        value
+    };
+};
 
-export const removeLine = (id) => {
-
+export const removeLine = id => {
     return {
         type: ActionTypes.ADHOC_REMOVE_LINE,
-        id,
-    }
-}
+        id
+    };
+};
 
-export const setStartTime = (value) => {
-
+export const setStartTime = value => {
     return {
         type: ActionTypes.SET_START_TIME,
-        value,
-    }
-}
+        value
+    };
+};
 
-export const setCurrentIndex = (value) => {
-
+export const setCurrentIndex = value => {
     return {
         type: ActionTypes.SET_CURRENT_INDEX,
-        value,
-    }
-}
+        value
+    };
+};
 
-export const setAutoComplete = (value) => {
-
+export const setAutoComplete = value => {
     return {
         type: ActionTypes.SET_AUTOCOMPLETE,
-        value,
-    }
-}
+        value
+    };
+};
 
 export const addAutoComplete = (id, value) => {
-
     return {
         type: ActionTypes.ADD_AUTOCOMPLETE,
         id,
-        value,
-    }
-}
+        value
+    };
+};
 
-export const removeAutoComplete = (id) => {
-
+export const removeAutoComplete = id => {
     return {
         type: ActionTypes.REMOVE_AUTOCOMPLETE,
-        id,
-    }
-}
+        id
+    };
+};

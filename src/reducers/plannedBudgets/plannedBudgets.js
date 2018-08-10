@@ -1,10 +1,8 @@
-export const initialState = {
-
-};
+export const initialState = {};
 
 export const ActionTypes = {
-    SET_PLANNED_BUDGETS: 'SET_PLANNED_BUDGETS',
-    SET_PLANNED_VALUE: 'SET_PLANNED_VALUE',
+    SET_PLANNED_BUDGETS: "SET_PLANNED_BUDGETS",
+    SET_PLANNED_VALUE: "SET_PLANNED_VALUE"
 };
 
 const period = (state = initialState, action) => {
@@ -13,13 +11,12 @@ const period = (state = initialState, action) => {
             return {
                 ...state,
                 [action.categoryId]: action.value
-            }
+            };
 
         default:
-            return state
+            return state;
     }
-
-}
+};
 const items = (state = initialState, action) => {
     switch (action.type) {
         case ActionTypes.SET_PLANNED_BUDGETS:
@@ -29,13 +26,11 @@ const items = (state = initialState, action) => {
             return {
                 ...state,
                 [action.period]: period(state[action.period], action)
-            }
+            };
 
         default:
-            return state
+            return state;
     }
-
-}
+};
 
 export default items;
-

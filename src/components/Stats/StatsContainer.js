@@ -1,22 +1,22 @@
 import React from "react";
-import {connect} from "react-redux";
-import Stats from './Stats';
-import {currentPeriodSelector} from "../../selectors/appStateSelector";
-import {setCurrentPeriod} from "../../reducers/appState/appState_actions";
+import { connect } from "react-redux";
+import Stats from "./Stats";
+import { currentPeriodSelector } from "../../selectors/appStateSelector";
+import { setCurrentPeriod } from "../../reducers/appState/appState_actions";
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        period: currentPeriodSelector(state),
+        period: currentPeriodSelector(state)
     };
-}
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        onPeriodChange: (period) => {
-            dispatch(setCurrentPeriod(period ))
-        },
-    }
-}
+        onPeriodChange: period => {
+            dispatch(setCurrentPeriod(period));
+        }
+    };
+};
 
 export default connect(
     mapStateToProps,

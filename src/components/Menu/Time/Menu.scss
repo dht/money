@@ -7,15 +7,29 @@
 
   &.down {
     bottom: 5px;
-    left: 5px;
+    right: 5px;
   }
 
   &.up {
     top: 5px;
-    right: 20px;
+    left: 20px;
   }
 
   div {
     margin: 5px 7px;
+  }
+}
+
+.App.rtl {
+  .Menu-container {
+    &.down {
+      left: 5px;
+      right: auto;
+    }
+
+    &.up {
+      right: 20px;
+      left: auto;
+    }
   }
 }

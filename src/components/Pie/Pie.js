@@ -1,31 +1,29 @@
-import React, {Component} from 'react';
-import './Pie.css';
-import ReactChartkick, {LineChart, PieChart} from 'react-chartkick'
-import Highcharts from 'highcharts'
+import React, { Component } from "react";
+import "./Pie.css";
+import ReactChartkick, { LineChart, PieChart } from "react-chartkick";
+import Highcharts from "highcharts";
 
-ReactChartkick.addAdapter(Highcharts)
+ReactChartkick.addAdapter(Highcharts);
 
 export class Pie extends Component {
-
-    state = {}
+    state = {};
 
     renderPie() {
-        const {pie, currency} = this.props;
+        const { pie, currency } = this.props;
 
-        return <PieChart
-            data={pie}
-            thousands=","
-            prefix={currency}
-            height="100%"
-            width="100%"/>
+        return (
+            <PieChart
+                data={pie}
+                thousands=","
+                prefix={currency}
+                height="100%"
+                width="100%"
+            />
+        );
     }
 
     render() {
-        return (
-            <div className="Pie-container">
-
-            </div>
-        );
+        return <div className="Pie-container" />;
     }
 }
 

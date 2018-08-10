@@ -1,23 +1,21 @@
-import React, {Component} from 'react';
-import './Timer.css';
+import React, { Component } from "react";
+import "./Timer.css";
 
 class Timer extends Component {
+    state = {};
 
-    state = {}
-
-    keydown = (ev) => {
-
+    keydown = ev => {
         if (ev.which === 27) {
             this.props.onClose();
         }
     };
 
     componentDidMount() {
-        window.addEventListener('keydown', this.keydown);
+        window.addEventListener("keydown", this.keydown);
     }
 
     componentWillUnmount() {
-        window.removeEventListener('keydown', this.keydown)
+        window.removeEventListener("keydown", this.keydown);
     }
 
     render() {
@@ -30,12 +28,19 @@ class Timer extends Component {
                 </div>
                 <div className="content">
                     <ul>
-                        {
-                            arr.map(minutes => <li
-                                className={minutes == this.props.minutes ? 'selected' : ''}
+                        {arr.map(minutes => (
+                            <li
+                                className={
+                                    minutes == this.props.minutes
+                                        ? "selected"
+                                        : ""
+                                }
                                 key={minutes}
-                                onClick={() => this.props.onSelect(minutes)}>{minutes}</li>)
-                        }
+                                onClick={() => this.props.onSelect(minutes)}
+                            >
+                                {minutes}
+                            </li>
+                        ))}
                     </ul>
                 </div>
             </div>

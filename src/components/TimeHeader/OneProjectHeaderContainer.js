@@ -1,27 +1,30 @@
 import React from "react";
-import {connect} from "react-redux";
-import TimeHeader from './TimeHeader';
-import {getPeriodNumber} from "../../utils/date";
-import {currentProjectSelector} from "../../selectors/projectsSelector";
+import { connect } from "react-redux";
+import TimeHeader from "./TimeHeader";
+import { getPeriodNumber } from "../../utils/dateAndMoney";
+import { currentProjectSelector } from "../../selectors/projectsSelector";
+import { withContext } from "../../utils/withContext";
 
 const mapStateToProps = (state, ownProps) => {
+    const { i18n } = ownProps;
 
     const project = currentProjectSelector(state) || {};
 
     return {
-        subtitle: 'תכנון פרוייקט',
+        subtitle: i18n.projectPlanning,
         title: project.title,
         todayUnit: getPeriodNumber(),
-        max: 52,
+        max: 52
     };
-}
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-    }
-}
+    return {};
+};
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(TimeHeader);
+export default withContext(
+    connect(
+        mapStateToProps,
+        mapDispatchToProps
+    )(TimeHeader)
+);

@@ -1,21 +1,30 @@
 .TimeHeader-container {
-  padding:20px;
+  padding: 20px;
   position: relative;
 
   .title {
-    font-size:30px;
+    font-size: 30px;
     margin-bottom: 10px;
   }
 
   .subtitle {
-    font-size:20px;
+    font-size: 20px;
     font-weight: 300;
-    color:rgba(255,255,255,0.68);
+    color: rgba(255, 255, 255, 0.68);
   }
 
   .bar {
     position: absolute;
-    left:10px;
-    top:20px;
+    right: 10px;
+    top: 20px;
+  }
+}
+
+.App.rtl {
+  .TimeHeader-container {
+    .bar {
+      right: auto;
+      left: 10px;
+    }
   }
 }

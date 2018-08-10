@@ -12,6 +12,12 @@
     border: none;
     background-color: #eee; }
   .New-container .sum {
-    font-size: 18px; }
+    font-size: 18px;
+    width: 96px;
+    text-align: left; }
+
+.App.rtl .New-container .sum {
+  direction: rtl;
+  text-align: right; }
 
 /*# sourceMappingURL=New.css.map */

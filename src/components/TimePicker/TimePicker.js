@@ -1,29 +1,30 @@
-import React, {Component} from 'react';
-import './TimePicker.css';
+import React, { Component } from "react";
+import "./TimePicker.css";
 import alerts from "../../utils/alerts";
+import PropTypes from "prop-types";
+import List from "../List/List";
 
 export class TimePicker extends Component {
-
-    state = {
-    }
+    state = {};
 
     onClick = () => {
-        const {startTime} = this.props;
+        const { i18n } = this.context;
+        const { startTime } = this.props;
 
         alerts.prompt({
-            yesText: 'שמירה',
-            message: 'start time?',
+            yesText: i18n.save,
+            message: i18n.startTime,
             value: startTime,
-            callback: (startTime) => {
+            callback: startTime => {
                 if (startTime) {
                     this.props.setStartTime(startTime);
                 }
             }
         });
-    }
+    };
 
     render() {
-        const {startTime} = this.props;
+        const { startTime } = this.props;
 
         return (
             <div className="TimePicker-container" onClick={this.onClick}>
@@ -32,5 +33,9 @@ export class TimePicker extends Component {
         );
     }
 }
+
+TimePicker.contextTypes = {
+    i18n: PropTypes.object
+};
 
 export default TimePicker;

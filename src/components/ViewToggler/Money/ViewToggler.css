@@ -1,7 +1,7 @@
 .ViewToggler-container {
   position: absolute;
   top: 60px;
-  left: 0;
+  right: 0;
   padding: 15px 0;
   background-color: rgba(0, 0, 0, 0.8);
   width: 40px;
@@ -22,5 +22,9 @@
       color: lightgoldenrodyellow; }
     .ViewToggler-container i.selected {
       color: gold; }
+
+.App.rtl .ViewToggler-container .bar {
+  right: auto;
+  left: 0; }
 
 /*# sourceMappingURL=ViewToggler.css.map */

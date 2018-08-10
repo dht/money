@@ -3,7 +3,7 @@
   box-sizing: border-box;
   flex: 1;
   align-items: center;
-  padding-left: 10px; }
+  padding-right: 10px; }
   .New-container button {
     margin-right: 10px;
     margin-left: 10px;
@@ -12,6 +12,15 @@
     border: none;
     background-color: #eee; }
   .New-container .sum {
-    font-size: 18px; }
+    font-size: 18px;
+    width: 96px;
+    text-align: left; }
+
+.App.rtl .New-container {
+  padding-right: 0;
+  padding-left: 10px; }
+  .App.rtl .New-container .sum {
+    direction: rtl;
+    text-align: right; }
 
 /*# sourceMappingURL=New.css.map */

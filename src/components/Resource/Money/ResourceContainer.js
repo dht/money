@@ -1,20 +1,19 @@
 import React from "react";
-import {connect} from "react-redux";
-import Money from './Resource';
+import { connect } from "react-redux";
+import Money from "./Resource";
 
 const mapStateToProps = (state, ownProps) => {
-    const {appState} = state,
-        {currency} = appState;
+    const { appState } = state,
+        { currency } = appState;
 
     return {
-        unit: currency,
+        unit: currency
     };
-}
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-    }
-}
+    return {};
+};
 
 export default connect(
     mapStateToProps,

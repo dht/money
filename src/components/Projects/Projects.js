@@ -1,42 +1,36 @@
-import React, {Component} from 'react';
-import './Projects.css';
+import React, { Component } from "react";
+import "./Projects.css";
 import ViewToggler from "../ViewToggler/ViewToggler";
 import WeekHeader from "../TimeHeader/ProjectsHeaderContainer";
 import List from "../List/ListProjectsContainer";
-import Toggle from 'react-toggle';
-import 'react-toggle/style.css';
+import Toggle from "react-toggle";
+import "react-toggle/style.css";
 
 export class Projects extends Component {
-
-    state = {}
+    state = {};
 
     render() {
-        const listClassNames = ['list'];
+        const listClassNames = ["list"];
         return (
             <div className="Projects-container page-structure">
-                <div className={listClassNames.join(' ')}>
+                <div className={listClassNames.join(" ")}>
+                    <WeekHeader onChange={() => {}} />
 
-                    <WeekHeader onChange={() => {
-                    }}/>
-
-                    <List withSum={true} noAutoComplete={true}/>
+                    <List withSum={true} noAutoComplete={true} />
 
                     <div className="hide-projects">
                         <Toggle
                             defaultChecked={this.props.showInWeek}
                             onChange={this.props.toggleShowInWeek}
                             icons={{
-                                unchecked: null,
+                                unchecked: null
                             }}
                         />
                     </div>
-
                 </div>
-                <div className="content">
-                </div>
+                <div className="content" />
 
-                <ViewToggler/>
-
+                <ViewToggler />
             </div>
         );
     }

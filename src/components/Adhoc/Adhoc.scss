@@ -1,13 +1,28 @@
 .Adhoc-container {
-  .content {
-  }
+    .content {
+    }
 
-  .list {
-  }
+    .list {
+    }
 
-  .clear-button {
-    position: absolute;
-    top: 27px;
-    left:80px;
-  }
+    .clear-button {
+        position: absolute;
+        top: 27px;
+        right: 80px;
+    }
+}
+
+.App.rtl {
+    .Adhoc-container {
+        .content {
+        }
+
+        .list {
+        }
+
+        .clear-button {
+            right: auto;
+            left: 80px;
+        }
+    }
 }

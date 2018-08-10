@@ -1,22 +1,22 @@
-import {guid8} from "../../utils/guid";
+import { guid8 } from "../../utils/guid";
 
 export const initialState = {
     lines: {},
-    startTime: '6:40',
+    startTime: "6:40",
     currentIndex: 0,
     autoComplete: {}
 };
 
 export const ActionTypes = {
-    ADHOC_SET_LINES: 'ADHOC_SET_LINES',
-    ADHOC_ADD_LINE: 'ADHOC_ADD_LINE',
-    ADHOC_CHANGE_LINE: 'ADHOC_CHANGE_LINE',
-    ADHOC_REMOVE_LINE: 'ADHOC_REMOVE_LINE',
-    SET_START_TIME: 'SET_START_TIME',
-    SET_CURRENT_INDEX: 'SET_CURRENT_INDEX',
-    SET_AUTOCOMPLETE: 'SET_AUTOCOMPLETE',
-    ADD_AUTOCOMPLETE: 'ADD_AUTOCOMPLETE',
-    REMOVE_AUTOCOMPLETE: 'REMOVE_AUTOCOMPLETE',
+    ADHOC_SET_LINES: "ADHOC_SET_LINES",
+    ADHOC_ADD_LINE: "ADHOC_ADD_LINE",
+    ADHOC_CHANGE_LINE: "ADHOC_CHANGE_LINE",
+    ADHOC_REMOVE_LINE: "ADHOC_REMOVE_LINE",
+    SET_START_TIME: "SET_START_TIME",
+    SET_CURRENT_INDEX: "SET_CURRENT_INDEX",
+    SET_AUTOCOMPLETE: "SET_AUTOCOMPLETE",
+    ADD_AUTOCOMPLETE: "ADD_AUTOCOMPLETE",
+    REMOVE_AUTOCOMPLETE: "REMOVE_AUTOCOMPLETE"
 };
 
 const line = (state, action) => {
@@ -31,9 +31,9 @@ const line = (state, action) => {
             };
 
         default:
-            return state
+            return state;
     }
-}
+};
 
 const lines = (state, action) => {
     let newState;
@@ -44,18 +44,17 @@ const lines = (state, action) => {
             return {
                 ...state,
                 [action.id]: line(state[action.id], action)
-            }
+            };
 
         case ActionTypes.ADHOC_REMOVE_LINE:
-            newState = {...state};
+            newState = { ...state };
             delete newState[action.id];
             return newState;
 
-
         default:
-            return state
+            return state;
     }
-}
+};
 const autoComplete = (state, action) => {
     let newState;
 
@@ -70,17 +69,16 @@ const autoComplete = (state, action) => {
             };
 
         case ActionTypes.REMOVE_AUTOCOMPLETE:
-            newState = {...state};
+            newState = { ...state };
             delete newState[action.id];
-            return newState
+            return newState;
 
         default:
-            return state
+            return state;
     }
-}
+};
 
 const adhoc = (state = initialState, action) => {
-
     switch (action.type) {
         case ActionTypes.ADHOC_SET_LINES:
             return {
@@ -117,10 +115,8 @@ const adhoc = (state = initialState, action) => {
             };
 
         default:
-            return state
+            return state;
     }
-
-}
+};
 
 export default adhoc;
-

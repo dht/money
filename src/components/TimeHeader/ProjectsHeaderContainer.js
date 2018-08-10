@@ -1,23 +1,26 @@
 import React from "react";
-import {connect} from "react-redux";
-import TimeHeader from './TimeHeader';
-import {getPeriodNumber} from "../../utils/date";
+import { connect } from "react-redux";
+import TimeHeader from "./TimeHeader";
+import { getPeriodNumber } from "../../utils/dateAndMoney";
+import { withContext } from "../../utils/withContext";
 
 const mapStateToProps = (state, ownProps) => {
+    const { i18n } = ownProps;
 
     return {
-        title: 'פרוייקטים',
-        subtitle: 'שלב אחרי שלב',
-        max: 52,
+        title: i18n.projects,
+        subtitle: i18n.stepByStep,
+        max: 52
     };
-}
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-    }
-}
+    return {};
+};
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(TimeHeader);
+export default withContext(
+    connect(
+        mapStateToProps,
+        mapDispatchToProps
+    )(TimeHeader)
+);

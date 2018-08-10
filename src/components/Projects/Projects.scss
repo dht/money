@@ -6,7 +6,18 @@
     .hide-projects {
       position: absolute;
       top: 35px;
-      left: 25px;
+      right: 25px;
+    }
+  }
+}
+
+.App.rtl {
+  .Projects-container {
+    .list {
+      .hide-projects {
+        right: auto;
+        left: 25px;
+      }
     }
   }
 }

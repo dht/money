@@ -1,22 +1,22 @@
 import React from "react";
-import {connect} from "react-redux";
-import TimePicker from './TimePicker';
-import {adhocStartTimeSelector} from "../../selectors/adhocSelector";
-import {setStartTime} from "../../reducers/adhoc/adhoc_thunks";
+import { connect } from "react-redux";
+import TimePicker from "./TimePicker";
+import { adhocStartTimeSelector } from "../../selectors/adhocSelector";
+import { setStartTime } from "../../reducers/adhoc/adhoc_thunks";
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        startTime: adhocStartTimeSelector(state),
+        startTime: adhocStartTimeSelector(state)
     };
-}
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        setStartTime: (time) => {
+        setStartTime: time => {
             dispatch(setStartTime(time));
-        },
-    }
-}
+        }
+    };
+};
 
 export default connect(
     mapStateToProps,

@@ -1,11 +1,10 @@
-export const initialState = {
-};
+export const initialState = {};
 
 export const ActionTypes = {
-    BUDGET_SET_ITEMS: 'BUDGET_SET_ITEMS',
-    BUDGET_ADD_ITEM: 'BUDGET_ADD_ITEM',
-    BUDGET_UPDATE_ITEM: 'BUDGET_UPDATE_ITEM',
-    BUDGET_REMOVE_ITEM: 'BUDGET_REMOVE_ITEM',
+    BUDGET_SET_ITEMS: "BUDGET_SET_ITEMS",
+    BUDGET_ADD_ITEM: "BUDGET_ADD_ITEM",
+    BUDGET_UPDATE_ITEM: "BUDGET_UPDATE_ITEM",
+    BUDGET_REMOVE_ITEM: "BUDGET_REMOVE_ITEM"
 };
 
 const budget = (state, action) => {
@@ -17,12 +16,12 @@ const budget = (state, action) => {
             return {
                 ...state,
                 ...action.value
-            }
+            };
 
         default:
-            return state
+            return state;
     }
-}
+};
 
 const week = (state, action) => {
     let newState;
@@ -33,18 +32,17 @@ const week = (state, action) => {
             return {
                 ...state,
                 [action.categoryId]: budget(state[action.categoryId], action)
-            }
+            };
 
         case ActionTypes.BUDGET_REMOVE_ITEM:
-            newState = {...state};
+            newState = { ...state };
             delete newState[action.categoryId];
             return newState;
 
-
         default:
-            return state
+            return state;
     }
-}
+};
 
 const items = (state = initialState, action) => {
     switch (action.type) {
@@ -54,16 +52,13 @@ const items = (state = initialState, action) => {
         case ActionTypes.BUDGET_ADD_ITEM:
         case ActionTypes.BUDGET_UPDATE_ITEM:
         case ActionTypes.BUDGET_REMOVE_ITEM:
-
             return {
                 [action.week]: week(state[action.week], action)
-            }
+            };
 
         default:
-            return state
+            return state;
     }
-
-}
+};
 
 export default items;
-

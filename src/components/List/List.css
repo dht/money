@@ -29,7 +29,6 @@
     overflow: auto;
     flex: 1; }
   .List-container .sortableHelper, .List-container li.line {
-    direction: rtl;
     color: white;
     font-size: 16px;
     padding: 0;
@@ -45,5 +44,8 @@
       cursor: pointer; }
     .List-container .sortableHelper .drag-it, .List-container li.line .drag-it {
       margin: 0 3px; }
+
+.App.rtl .List-container .sortableHelper, .App.rtl .List-container li.line {
+  direction: rtl; }
 
 /*# sourceMappingURL=List.css.map */

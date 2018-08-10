@@ -7,11 +7,11 @@ const getSuggestions = (items = [], value) => {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
-    return inputLength === 0
-        ? []
-        : items.filter(
-              item => (item.title || "").toLowerCase().indexOf(inputValue) === 0
-          );
+    if (inputLength === 0) return [];
+
+    return items.filter(
+        item => (item.title || "").toLowerCase().indexOf(inputValue) === 0
+    );
 };
 
 // When suggestion is clicked, Autosuggest needs to populate the input

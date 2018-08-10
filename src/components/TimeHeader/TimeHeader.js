@@ -1,22 +1,21 @@
-import React, {Component} from 'react';
-import './TimeHeader.css';
+import React, { Component } from "react";
+import "./TimeHeader.css";
 import TimeBar from "../TimeBar/TimeBar";
 import TimePicker from "../TimePicker/TimePickerContainer";
 
 export class TimeHeader extends Component {
-
-    state = {}
+    state = {};
 
     renderTimeBar() {
-        return <TimeBar {...this.props}/>;
+        return <TimeBar {...this.props} />;
     }
 
     renderTimePicker() {
-        return <TimePicker {...this.props}/>;
+        return <TimePicker {...this.props} />;
     }
 
     render() {
-        const {title, subtitle, showTimePicker} = this.props;
+        const { title, subtitle, showTimePicker } = this.props;
 
         return (
             <div className="TimeHeader-container">
@@ -24,10 +23,9 @@ export class TimeHeader extends Component {
                 <div className="subtitle">{subtitle}</div>
 
                 <div className="bar">
-                    {showTimePicker ?
-                        this.renderTimePicker() :
-                        this.renderTimeBar()
-                    }
+                    {showTimePicker
+                        ? this.renderTimePicker()
+                        : this.renderTimeBar()}
                 </div>
             </div>
         );

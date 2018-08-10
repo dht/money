@@ -1,47 +1,38 @@
-import { createSelector } from 'reselect'
+import { createSelector } from "reselect";
 
-const categoriesRawSelector = state => state.categories
+const categoriesRawSelector = state => state.categories;
 
 export const categoriesSelector = createSelector(
     categoriesRawSelector,
     categories => {
         const keys = Object.keys(categories);
 
-        return keys
-            .map(key => categories[key]);
+        return keys.map(key => categories[key]);
     }
-)
+);
 
-export const namesSelector = createSelector(
-    categoriesSelector,
-    categories => {
-        return categories
-            .map(category => {
-                let {names} = category;
-                const keys = Object.keys(names || {});
+export const namesSelector = createSelector(categoriesSelector, categories => {
+    return categories.map(category => {
+        let { names } = category;
+        const keys = Object.keys(names || {});
 
-                names = keys.map(key => names[key].title);
+        names = keys.map(key => names[key].title);
 
-                return {
-                    ...category,
-                    names
-                }
-            });
-    }
-)
+        return {
+            ...category,
+            names
+        };
+    });
+});
 
-export const reverseNamesSelector = createSelector(
-    namesSelector,
-    items => {
-        return items
-            .reduce((output, item) => {
-                let {id, title, names} = item;
+export const reverseNamesSelector = createSelector(namesSelector, items => {
+    return items.reduce((output, item) => {
+        let { id, title, names } = item;
 
-                names.forEach(name => {
-                    output[name] = {categoryId: id, categoryTitle: title};
-                });
+        names.forEach(name => {
+            output[name] = { categoryId: id, categoryTitle: title };
+        });
 
-                return output;
-            }, {});
-    }
-)
+        return output;
+    }, {});
+});

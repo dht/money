@@ -1,15 +1,22 @@
-import React, {Component} from 'react';
-import './Resource.css';
+import React, { Component } from "react";
+import "./Resource.css";
 
 export class Resource extends Component {
     onClick = () => {
         if (this.props.onClick) {
             this.props.onClick();
         }
-    }
+    };
 
     render() {
-        let {unit, className, value = "", abs, color, colorValue = value} = this.props,
+        let {
+                unit,
+                className,
+                value = "",
+                abs,
+                color,
+                colorValue = value
+            } = this.props,
             classNames = [className],
             text;
 
@@ -31,14 +38,17 @@ export class Resource extends Component {
         }
 
         if (value === 0 || isNaN(value)) {
-            text = '-';
+            text = "-";
         } else {
-            value = value.toLocaleString()
+            value = value.toLocaleString();
             text = `${unit}${value}`;
         }
 
         return (
-            <div className={`Resource-container ${classNames.join(' ')}`} onClick={this.onClick}>
+            <div
+                className={`Resource-container ${classNames.join(" ")}`}
+                onClick={this.onClick}
+            >
                 {text}
             </div>
         );

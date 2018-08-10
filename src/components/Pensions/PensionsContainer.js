@@ -1,17 +1,14 @@
 import React from "react";
-import {connect} from "react-redux";
-import Pensions from './Pensions';
+import { connect } from "react-redux";
+import Pensions from "./Pensions";
 
 const mapStateToProps = (state, ownProps) => {
-    return {
-    };
-}
+    return {};
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-
-    }
-}
+    return {};
+};
 
 export default connect(
     mapStateToProps,

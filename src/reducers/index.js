@@ -1,4 +1,4 @@
-import {combineReducers} from "redux";
+import { combineReducers } from "redux";
 
 import appState from "./appState/appState";
 import adhoc from "./adhoc/adhoc";
@@ -15,5 +15,5 @@ export default combineReducers({
     budgets,
     plannedBudgets,
     graphState: graph,
-    projects,
-})
+    projects
+});

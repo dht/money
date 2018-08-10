@@ -1,18 +1,16 @@
 import React from "react";
-import {connect} from "react-redux";
-import Menu from './Menu';
+import { connect } from "react-redux";
+import Menu from "./Menu";
 
 const mapStateToProps = (state, ownProps) => {
-    return {
-    };
-}
+    return {};
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        method: () => {
-        },
-    }
-}
+        method: () => {}
+    };
+};
 
 export default connect(
     mapStateToProps,

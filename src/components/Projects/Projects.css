@@ -1,6 +1,10 @@
 .Projects-container .list .hide-projects {
   position: absolute;
   top: 35px;
+  right: 25px; }
+
+.App.rtl .Projects-container .list .hide-projects {
+  right: auto;
   left: 25px; }
 
 /*# sourceMappingURL=Projects.css.map */

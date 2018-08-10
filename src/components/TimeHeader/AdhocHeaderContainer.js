@@ -1,29 +1,29 @@
 import React from "react";
-import {connect} from "react-redux";
-import TimeHeader from './TimeHeader';
-import {currentPeriodSelector} from "../../selectors/appStateSelector";
-import {getPeriodNumber, monthHeader, monthRange} from "../../utils/date";
-import {adhocStartTimeSelector, currentIndexSelector} from "../../selectors/adhocSelector";
+import { connect } from "react-redux";
+import TimeHeader from "./TimeHeader";
+import { getPeriodNumber } from "../../utils/dateAndMoney";
+import { adhocStartTimeSelector } from "../../selectors/adhocSelector";
+import { withContext } from "../../utils/withContext";
 
 const mapStateToProps = (state, ownProps) => {
-
-    const currentUnit = currentPeriodSelector(state);
+    const { i18n } = ownProps;
 
     return {
-        title: 'סשן',
+        title: i18n.session,
         todayUnit: getPeriodNumber(),
-        subtitle: 'ציור בחול',
+        subtitle: i18n.sandPaint,
         showTimePicker: true,
-        startTime: adhocStartTimeSelector(state),
+        startTime: adhocStartTimeSelector(state)
     };
-}
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-    }
-}
+    return {};
+};
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(TimeHeader);
+export default withContext(
+    connect(
+        mapStateToProps,
+        mapDispatchToProps
+    )(TimeHeader)
+);

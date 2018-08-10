@@ -1,17 +1,15 @@
-import {ActionTypes} from "./graph";
+import { ActionTypes } from "./graph";
 
-export const setGraphType = (value) => {
-
+export const setGraphType = value => {
     return {
         type: ActionTypes.SET_GRAPH_TYPE,
-        value,
-    }
-}
+        value
+    };
+};
 
-export const setGraphRange = (value) => {
-
+export const setGraphRange = value => {
     return {
         type: ActionTypes.SET_GRAPH_RANGE,
-        value,
-    }
-}
+        value
+    };
+};

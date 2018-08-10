@@ -1,7 +1,7 @@
-const  DEBUG = true; // Enable logging
+const DEBUG = true; // Enable logging
 
-export const log = function () {
+export const log = function() {
     if (DEBUG) {
         console.log.apply(console, arguments);
     }
-}
+};

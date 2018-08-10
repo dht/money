@@ -1,9 +1,6 @@
-import {createSelector} from 'reselect'
-import {plannedBudgetSelector} from "./plannedBudgetsSelector";
+import { createSelector } from "reselect";
+import { plannedBudgetSelector } from "./plannedBudgetsSelector";
 
-export const incomeSelector = createSelector(
-    plannedBudgetSelector,
-    (budgets) => {
-        return 14745;
-    }
-)
+export const incomeSelector = createSelector(plannedBudgetSelector, budgets => {
+    return 14745;
+});

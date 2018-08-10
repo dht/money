@@ -6,11 +6,18 @@
   margin: 5px; }
   .Menu-container.down {
     bottom: 5px;
-    left: 5px; }
+    right: 5px; }
   .Menu-container.up {
     top: 5px;
-    right: 20px; }
+    left: 20px; }
   .Menu-container div {
     margin: 5px 7px; }
+
+.App.rtl .Menu-container.down {
+  left: 5px;
+  right: auto; }
+.App.rtl .Menu-container.up {
+  right: 20px;
+  left: auto; }
 
 /*# sourceMappingURL=Menu.css.map */

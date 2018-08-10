@@ -1,14 +1,12 @@
-import React, {Component} from 'react';
-import './Page.css';
+import React, { Component } from "react";
+import "./Page.css";
 
 export class Page extends Component {
-
-    state = {
-    }
+    state = {};
 
     render() {
-        let {title, done, showPage} = this.props,
-            empty = title === '-';
+        let { title, done, showPage } = this.props,
+            empty = title === "-";
 
         if (done && !empty) {
             title = "😊";

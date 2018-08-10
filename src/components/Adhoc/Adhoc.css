@@ -1,6 +1,10 @@
 .Adhoc-container .clear-button {
   position: absolute;
   top: 27px;
+  right: 80px; }
+
+.App.rtl .Adhoc-container .clear-button {
+  right: auto;
   left: 80px; }
 
 /*# sourceMappingURL=Adhoc.css.map */

@@ -1,6 +1,6 @@
-import {getPeriodNumber, getWeekNumber} from "../../utils/date";
-import {modes, planningModes} from "../../constants/constants";
-import {getStorageKey} from "../../utils/storage";
+import { getPeriodNumber, getWeekNumber } from "../../utils/dateAndMoney";
+import { modes, planningModes } from "../../constants/constants";
+import { getStorageKey } from "../../utils/storage";
 
 export const initialState = {
     mode: modes.TIME,
@@ -10,33 +10,36 @@ export const initialState = {
     currentPeriod: getPeriodNumber(),
     isLoading: true,
     isAdhoc: false,
-    showList: getStorageKey('showList', true),
-    showPage: getStorageKey('showPage', true),
-    currency: '₪',
-    timeUnit: '',
+    showList: getStorageKey("showList", true),
+    showPage: getStorageKey("showPage", true),
+    currency: getStorageKey("currency", "$"),
+    timeUnit: "",
+    locale: getStorageKey("locale", "en"),
     currentIndexes: {},
     lines: {},
-    timetravelDate: null,
+    timetravelDate: null
 };
 
 export const ActionTypes = {
-    SET_MODE: 'SET_MODE',
-    SET_PLANNING_MODE: 'SET_PLANNING_MODE',
-    SET_SHOW_LIST: 'SET_SHOW_LIST',
-    SET_SHOW_PAGE: 'SET_SHOW_PAGE',
-    SET_IS_ADHOC: 'SET_IS_ADHOC',
-    SET_IS_LOADING: 'SET_IS_LOADING',
-    SET_CURRENT_INDEXES: 'SET_CURRENT_INDEXES',
-    SET_CURRENT_INDEX: 'SET_CURRENT_INDEX',
-    SET_CURRENT_BOARD: 'SET_CURRENT_BOARD',
-    SET_CURRENT_WEEK: 'SET_CURRENT_WEEK',
-    SET_CURRENT_PERIOD: 'SET_CURRENT_PERIOD',
-    SET_LINES: 'SET_LINES',
-    ADD_LINE: 'ADD_LINE',
-    CHANGE_LINE: 'CHANGE_LINE',
-    REMOVE_LINE: 'REMOVE_LINE',
-    ADD_CHANGE_LOG: 'ADD_CHANGE_LOG',
-    SET_TIMETRAVEL_DATE: 'SET_TIMETRAVEL_DATE',
+    SET_MODE: "SET_MODE",
+    SET_LOCALE: "SET_LOCALE",
+    SET_CURRENCY: "SET_CURRENCY",
+    SET_PLANNING_MODE: "SET_PLANNING_MODE",
+    SET_SHOW_LIST: "SET_SHOW_LIST",
+    SET_SHOW_PAGE: "SET_SHOW_PAGE",
+    SET_IS_ADHOC: "SET_IS_ADHOC",
+    SET_IS_LOADING: "SET_IS_LOADING",
+    SET_CURRENT_INDEXES: "SET_CURRENT_INDEXES",
+    SET_CURRENT_INDEX: "SET_CURRENT_INDEX",
+    SET_CURRENT_BOARD: "SET_CURRENT_BOARD",
+    SET_CURRENT_WEEK: "SET_CURRENT_WEEK",
+    SET_CURRENT_PERIOD: "SET_CURRENT_PERIOD",
+    SET_LINES: "SET_LINES",
+    ADD_LINE: "ADD_LINE",
+    CHANGE_LINE: "CHANGE_LINE",
+    REMOVE_LINE: "REMOVE_LINE",
+    ADD_CHANGE_LOG: "ADD_CHANGE_LOG",
+    SET_TIMETRAVEL_DATE: "SET_TIMETRAVEL_DATE"
 };
 
 const changes = (state, action) => {
@@ -48,9 +51,9 @@ const changes = (state, action) => {
             };
 
         default:
-            return state
+            return state;
     }
-}
+};
 
 const line = (state, action) => {
     switch (action.type) {
@@ -70,9 +73,9 @@ const line = (state, action) => {
             };
 
         default:
-            return state
+            return state;
     }
-}
+};
 
 const lines = (state, action) => {
     let newState;
@@ -90,15 +93,14 @@ const lines = (state, action) => {
             };
 
         case ActionTypes.REMOVE_LINE:
-            newState = {...state};
+            newState = { ...state };
             delete newState[action.id];
             return newState;
 
-
         default:
-            return state
+            return state;
     }
-}
+};
 
 const currentIndexes = (state, action) => {
     switch (action.type) {
@@ -109,16 +111,14 @@ const currentIndexes = (state, action) => {
             return {
                 ...state,
                 [action.week]: action.value
-            }
+            };
 
         default:
-            return state
+            return state;
     }
-}
-
+};
 
 const appState = (state = initialState, action) => {
-
     switch (action.type) {
         case ActionTypes.SET_MODE:
             return {
@@ -152,6 +152,18 @@ const appState = (state = initialState, action) => {
             return {
                 ...state,
                 currentBoard: action.value
+            };
+
+        case ActionTypes.SET_LOCALE:
+            return {
+                ...state,
+                locale: action.value
+            };
+
+        case ActionTypes.SET_CURRENCY:
+            return {
+                ...state,
+                locale: action.value
             };
 
         case ActionTypes.SET_IS_ADHOC:
@@ -201,10 +213,8 @@ const appState = (state = initialState, action) => {
             };
 
         default:
-            return state
+            return state;
     }
-
-}
+};
 
 export default appState;
-

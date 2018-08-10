@@ -1,27 +1,24 @@
-import React, {Component} from 'react';
-import './Button.css';
+import React, { Component } from "react";
+import "./Button.css";
 
 export class Button extends Component {
-
-    state = {
-    }
-
+    state = {};
 
     render() {
-        let {label, icon, round, light, className = ''} = this.props;
+        let { label, icon, round, light, className = "" } = this.props;
 
-        className += ' Button-container';
+        className += " Button-container";
 
         if (!label) {
-            className += ' icon';
+            className += " icon";
         }
 
         if (round) {
-            className += ' round';
+            className += " round";
         }
 
         if (light) {
-            className += ' light';
+            className += " light";
         }
 
         return (

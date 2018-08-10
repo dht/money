@@ -1,7 +1,10 @@
 html {
   height: 100%; }
 
-html, body, #root, #router {
+html,
+body,
+#root,
+#router {
   display: flex;
   align-items: stretch;
   flex: 1; }
@@ -11,9 +14,10 @@ html, body, #root, #router {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  font-family: 'Rubik', sans-serif;
-  direction: rtl;
+  font-family: "Rubik", sans-serif;
   font-weight: lighter; }
+  .App.rtl {
+    direction: rtl; }
   .App .logo {
     position: fixed;
     top: 5px;
@@ -26,11 +30,15 @@ html, body, #root, #router {
     left: 5px;
     width: 30px;
     height: 30px; }
+  .App .language-container {
+    position: fixed;
+    top: 10px;
+    right: 10px; }
 
 .material-icons {
   cursor: pointer; }
   .material-icons:hover {
-    opacity: 1.0 !important; }
+    opacity: 1 !important; }
 
 .page-structure {
   background-color: gold;
@@ -38,8 +46,7 @@ html, body, #root, #router {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  font-family: 'Rubik', sans-serif;
-  direction: rtl;
+  font-family: "Rubik", sans-serif;
   font-weight: lighter; }
   .page-structure.alternative {
     background-color: #e6e6e6; }
@@ -61,5 +68,9 @@ html, body, #root, #router {
       width: 0;
       overflow: hidden;
       padding: 0; }
+
+.App.rtl .language-container {
+  left: 10px;
+  right: auto; }
 
 /*# sourceMappingURL=App.css.map */

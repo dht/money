@@ -1,13 +1,11 @@
-import React, {Component} from 'react';
-import './Percent.css';
+import React, { Component } from "react";
+import "./Percent.css";
 
 export class Percent extends Component {
-
-    state = {
-    }
+    state = {};
 
     render() {
-        const {value, className} = this.props,
+        const { value, className } = this.props,
             classNames = ["Percent-container", className];
 
         return (

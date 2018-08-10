@@ -6,7 +6,6 @@
 
   .react-autosuggest__input {
     font-family: 'Rubik', sans-serif;
-    direction: rtl;
     background-color:#333;
     color:#fff;
     padding:3px 10px;
@@ -63,4 +62,12 @@
   }
 
 
+}
+
+.App.rtl {
+  .Autocomplete-container {
+    .react-autosuggest__input {
+      direction: rtl;
+    }
+  }
 }

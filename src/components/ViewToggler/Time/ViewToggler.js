@@ -1,30 +1,35 @@
-import React, {Component} from 'react';
-import './ViewToggler.css';
+import React, { Component } from "react";
+import "./ViewToggler.css";
 
 export class ViewToggler extends Component {
+    state = {};
 
-    state = {}
-
-    renderOption = (option) => {
-        const {boardId, selected, week} = this.props,
-            {id, icon, title, visible} = option || {};
+    renderOption = option => {
+        const { boardId, selected, week } = this.props,
+            { id, icon, title, visible } = option || {};
 
         if (!visible) return null;
 
-        let className = 'material-icons';
+        let className = "material-icons";
 
         if (selected === id) {
-            className += ' selected';
+            className += " selected";
         }
 
-        return <i key={id}
-                  onClick={() => this.props.onNavigate(boardId, id, week)}
-                  className={className}
-                  title={title}>{icon}</i>;
-    }
+        return (
+            <i
+                key={id}
+                onClick={() => this.props.onNavigate(boardId, id, week)}
+                className={className}
+                title={title}
+            >
+                {icon}
+            </i>
+        );
+    };
 
     render() {
-        const {options, showList} = this.props;
+        const { options, showList } = this.props;
 
         if (!showList) {
             return null;

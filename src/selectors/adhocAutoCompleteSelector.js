@@ -1,12 +1,12 @@
-import {createSelector} from 'reselect'
-import _ from 'lodash';
+import { createSelector } from "reselect";
+import _ from "lodash";
 
-export const adhocSelector = state => state.adhoc
+export const adhocSelector = state => state.adhoc;
 
 const adHocAutoCompleteRawSelector = createSelector(
     adhocSelector,
     adhoc => adhoc.autoComplete || {}
-)
+);
 
 export const adHocAutoCompleteSelector = createSelector(
     adHocAutoCompleteRawSelector,
@@ -24,8 +24,8 @@ export const adHocAutoCompleteSelector = createSelector(
                 return {
                     id: key,
                     title: autoComplete[key].title
-                }
+                };
             })
-            .filter(item => item)
+            .filter(item => item);
     }
-)
+);

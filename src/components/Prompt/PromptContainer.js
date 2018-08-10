@@ -1,18 +1,16 @@
 import React from "react";
-import {connect} from "react-redux";
-import Prompt from './Prompt';
+import { connect } from "react-redux";
+import Prompt from "./Prompt";
 
 const mapStateToProps = (state, ownProps) => {
-    return {
-    };
-}
+    return {};
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        method: () => {
-        },
-    }
-}
+        method: () => {}
+    };
+};
 
 export default connect(
     mapStateToProps,

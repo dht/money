@@ -1,50 +1,44 @@
-import {ActionTypes} from "./projects";
+import { ActionTypes } from "./projects";
 
-export const setProjects = (value) => {
-
+export const setProjects = value => {
     return {
         type: ActionTypes.SET_PROJECTS,
-        value,
-    }
-}
+        value
+    };
+};
 
 export const addProject = (id, value) => {
-
     return {
         type: ActionTypes.ADD_PROJECT,
         id,
-        value,
-
-    }
-}
+        value
+    };
+};
 export const updateProject = (id, value) => {
     return {
         type: ActionTypes.UPDATE_PROJECT,
         id,
-        value,
-    }
-}
+        value
+    };
+};
 
-export const removeProject = (id) => {
-
+export const removeProject = id => {
     return {
         type: ActionTypes.REMOVE_PROJECT,
-        id,
-    }
-}
+        id
+    };
+};
 
-export const setCurrentProject = (value) => {
-
+export const setCurrentProject = value => {
     return {
         type: ActionTypes.SET_CURRENT_PROJECT,
-        value,
-    }
-}
+        value
+    };
+};
 
-export const setShowInWeek = (value) => {
-
+export const setShowInWeek = value => {
     return {
         type: ActionTypes.SET_SHOW_IN_WEEK,
-        value,
-    }
-}
+        value
+    };
+};
