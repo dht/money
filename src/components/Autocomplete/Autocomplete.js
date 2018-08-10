@@ -1,16 +1,17 @@
-import Autosuggest from 'react-autosuggest';
+import Autosuggest from "react-autosuggest";
 import React from "react";
-import './Autocomplete.css';
-
+import "./Autocomplete.css";
 
 // Teach Autosuggest how to calculate suggestions for any given input value.
 const getSuggestions = (items = [], value) => {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
 
-    return inputLength === 0 ? [] : items.filter(item =>
-        (item.title || '').toLowerCase().indexOf(inputValue) === 0
-    );
+    return inputLength === 0
+        ? []
+        : items.filter(
+              item => (item.title || "").toLowerCase().indexOf(inputValue) === 0
+          );
 };
 
 // When suggestion is clicked, Autosuggest needs to populate the input
@@ -19,11 +20,7 @@ const getSuggestions = (items = [], value) => {
 const getSuggestionValue = suggestion => suggestion.title;
 
 // Use your imagination to render suggestions.
-const renderSuggestion = suggestion => (
-    <div>
-        {suggestion.title}
-    </div>
-);
+const renderSuggestion = suggestion => <div>{suggestion.title}</div>;
 
 class Autocomplete extends React.Component {
     constructor() {
@@ -35,30 +32,30 @@ class Autocomplete extends React.Component {
         // Suggestions also need to be provided to the Autosuggest,
         // and they are initially empty because the Autosuggest is closed.
         this.state = {
-            value: '',
+            value: "",
             suggestions: [],
-            highlighted: '',
+            highlighted: ""
         };
     }
 
     suggestInN = () => {
-        const {value} = this.state;
+        const { value } = this.state;
 
         this.timeout = setTimeout(() => {
-            this.props.onSelect({title: value});
-        }, 300)
-    }
+            this.props.onSelect({ title: value });
+        }, 300);
+    };
 
     clearN = () => {
         clearTimeout(this.timeout);
-    }
+    };
 
     clearHighlightedAutocomplete = () => {
-        const {highlighted} = this.state;
+        const { highlighted } = this.state;
         this.props.clearHighlightedAutocomplete(highlighted);
-    }
+    };
 
-    keydown = (ev) => {
+    keydown = ev => {
         ev.ignore = true;
 
         if (ev.which === 13) {
@@ -67,35 +64,35 @@ class Autocomplete extends React.Component {
         if (ev.which === 8 && ev.metaKey) {
             this.clearHighlightedAutocomplete();
         }
-    }
+    };
 
     componentDidMount() {
-        const elem = document.querySelector('.react-autosuggest__input');
-        elem.addEventListener('keydown', this.keydown);
+        const elem = document.querySelector(".react-autosuggest__input");
+        elem.addEventListener("keydown", this.keydown);
     }
 
     componentWillUnmount() {
-        const elem = document.querySelector('.react-autosuggest__input');
-        elem.removeEventListener('keydown', this.keydown)
+        const elem = document.querySelector(".react-autosuggest__input");
+        elem.removeEventListener("keydown", this.keydown);
     }
 
     componentWillReceiveProps(props) {
-        const {value} = props;
+        const { value } = props;
 
         if (value !== this.state.value) {
-            this.setState({value});
+            this.setState({ value });
         }
     }
 
-    onSuggestionSelected = (event, {suggestion}) => {
-        this.setState({value: suggestion.title});
+    onSuggestionSelected = (event, { suggestion }) => {
+        this.setState({ value: suggestion.title });
         if (this.props.onSelect) {
             this.props.onSelect(suggestion);
             this.clearN();
         }
-    }
+    };
 
-    onChange = (event, {newValue, method}) => {
+    onChange = (event, { newValue, method }) => {
         this.setState({
             value: newValue
         });
@@ -103,16 +100,16 @@ class Autocomplete extends React.Component {
 
     onBlur = () => {
         setTimeout(() => {
-            const {value} = this.state;
+            const { value } = this.state;
             if (this.props.onSelect) {
-                this.props.onSelect({title: value});
+                this.props.onSelect({ title: value });
             }
         }, 100);
-    }
+    };
 
     // Autosuggest will call this function every time you need to update suggestions.
     // You already implemented this logic above, so just use it.
-    onSuggestionsFetchRequested = ({value}) => {
+    onSuggestionsFetchRequested = ({ value }) => {
         this.setState({
             suggestions: getSuggestions(this.props.items, value)
         });
@@ -125,33 +122,38 @@ class Autocomplete extends React.Component {
         });
     };
 
-    onSuggestionHighlighted = ({suggestion}) => {
-        const {title} = suggestion || {};
+    onSuggestionHighlighted = ({ suggestion }) => {
+        const { title } = suggestion || {};
 
-        this.setState({highlighted: title});
-    }
+        this.setState({ highlighted: title });
+    };
 
     render() {
-        const {value, suggestions} = this.state;
+        const { value, suggestions } = this.state;
 
         // Autosuggest will pass through all these props to the input.
         let inputProps = {
             placeholder: this.props.placeholder,
             onChange: this.onChange,
             onBlur: this.onBlur,
-            value: ''
+            value: ""
         };
 
         if (value) {
-            inputProps['value'] = value;
+            inputProps["value"] = value;
         }
 
         // Finally, render it!
-        return (<div className={'Autocomplete-container'}>
+        return (
+            <div className={"Autocomplete-container"}>
                 <Autosuggest
                     suggestions={suggestions}
-                    onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-                    onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+                    onSuggestionsFetchRequested={
+                        this.onSuggestionsFetchRequested
+                    }
+                    onSuggestionsClearRequested={
+                        this.onSuggestionsClearRequested
+                    }
                     onSuggestionHighlighted={this.onSuggestionHighlighted}
                     onSuggestionSelected={this.onSuggestionSelected}
                     getSuggestionValue={getSuggestionValue}

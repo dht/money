@@ -26,6 +26,13 @@
     "sortablejs": "^1.7.0",
     "vex-js": "^4.1.0"
   },
+  "devDependencies": {
+    "eslint": "4.x",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.10.0",
+    "flow-bin": "^0.78.0",
+    "prettier": "^1.14.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
