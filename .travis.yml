@@ -3,7 +3,9 @@ node_js:
 - '9'
 cache:
   yarn: true
-install:
+  directories:
+    - node_modules
+before_deploy:
   - yarn build
 deploy:
   provider: firebase
