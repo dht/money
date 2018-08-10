@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import OneProject from "./OneProject";
 import { setCurrentProject } from "../../reducers/projects/projects_actions";

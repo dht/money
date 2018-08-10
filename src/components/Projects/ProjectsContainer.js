@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import Projects from "./Projects";
 import { toggleShowInWeek } from "../../reducers/projects/projects_thunks";

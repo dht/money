@@ -108,6 +108,8 @@ export const extra = () => {
             const { id, title } = item,
                 date = moment(item.date);
 
+            console.log("date", date);
+
             if (!title) {
                 dispatch(removeItem(id));
             }

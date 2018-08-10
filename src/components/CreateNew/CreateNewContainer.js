@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import CreateNew from "./CreateNew";
 import { setCurrentBoard } from "../../reducers/appState/appState_actions";

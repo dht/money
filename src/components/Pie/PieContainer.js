@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import Pie from "./Pie";
 import { pieSelector } from "../../selectors/pieSelector";

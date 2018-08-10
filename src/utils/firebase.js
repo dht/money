@@ -1,5 +1,4 @@
 import firebase from "firebase";
-import adhoc from "../reducers/adhoc/adhoc";
 
 const config = {
     apiKey: "AIzaSyDEDmGYBP8wCf_NQ-14Nq96YoLKWLabOu8",
@@ -22,7 +21,7 @@ let boardRef,
     categoriesRef,
     budgetsRef,
     plannedBudgetsRef,
-    lineMappingRef,
+    // lineMappingRef,
     adhocAutoCompleteRef,
     projectsRef;
 
@@ -36,7 +35,7 @@ export const initBoard = boardKey => {
     categoriesRef = boardRef.child("categories");
     budgetsRef = boardRef.child("budgets");
     plannedBudgetsRef = boardRef.child("plannedBudgets");
-    lineMappingRef = boardRef.child("lineMapping");
+    // lineMappingRef = boardRef.child("lineMapping");
     projectsRef = boardRef.child("projects");
 };
 

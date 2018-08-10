@@ -1,5 +1,3 @@
-import { guid8 } from "../../utils/guid";
-
 export const initialState = {
     lines: {},
     startTime: "6:40",

@@ -140,6 +140,8 @@ export class Period extends Component {
             case planningModes.ACTUAL_AND_PERCENT:
                 className = "hide-p hide-pp";
                 break;
+            default:
+                break;
         }
 
         return (

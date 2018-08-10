@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import Period from "./Period";
 import { categoriesSelector } from "../../selectors/categoriesSelector";
@@ -40,6 +39,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
                     break;
                 case planningModes.ACTUAL_AND_PERCENT:
                     mode = planningModes.PLANNED_VS_ACTUAL;
+                    break;
+                default:
                     break;
             }
 

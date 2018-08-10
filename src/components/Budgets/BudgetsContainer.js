@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import Budgets from "./Budgets";
 import { categoriesSelector } from "../../selectors/categoriesSelector";

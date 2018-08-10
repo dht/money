@@ -15,7 +15,7 @@ export class Resource extends Component {
                 value = "",
                 abs,
                 color,
-                colorValue = value
+                // colorValue = value
             } = this.props,
             classNames = [className],
             text;
@@ -23,7 +23,7 @@ export class Resource extends Component {
         value = parseInt(value, 10);
 
         // it is the value according which the color is decided
-        colorValue = parseInt(colorValue, 10);
+        // colorValue = parseInt(colorValue, 10);
 
         if (color) {
             abs = true;

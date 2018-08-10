@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import Autocomplete from "./Autocomplete";
 import { autocompleteSelector } from "../../selectors/autocompleteSelector";

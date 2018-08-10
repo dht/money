@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import Menu from "./Menu";
 import { toggleList } from "../../../reducers/appState/appState_thunks";

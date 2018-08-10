@@ -1,5 +1,4 @@
 import { createSelector } from "reselect";
-import _ from "lodash";
 
 export const adhocSelector = state => state.adhoc;
 

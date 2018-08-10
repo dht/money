@@ -1,4 +1,3 @@
-import React from "react";
 import { connect } from "react-redux";
 import TimeHeader from "./TimeHeader";
 import { getPeriodNumber } from "../../utils/dateAndMoney";

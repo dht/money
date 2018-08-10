@@ -10,7 +10,6 @@ import Button from "../Button/Button";
 import alerts from "../../utils/alerts";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import App from "../App";
 
 class Adhoc extends Component {
     state = {};

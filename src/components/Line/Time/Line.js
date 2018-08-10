@@ -15,7 +15,7 @@ export class Line extends Component {
                 showDrilldown,
                 middleColData = "sum"
             } = this.props,
-            { title, sum, order, startTime } = item || {},
+            { title, sum, startTime } = item || {},
             classNames = ["Line-container", "line"];
 
         if (done) {

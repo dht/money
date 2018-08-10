@@ -1,6 +1,4 @@
 import { createSelector } from "reselect";
-import { linesSelector } from "./linesSelector";
-import _ from "lodash";
 import { autocompleteSelector } from "./autocompleteSelector";
 import { reverseNamesSelector } from "./categoriesSelector";
 

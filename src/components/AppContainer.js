@@ -1,7 +1,6 @@
-import React from "react";
 import { connect } from "react-redux";
 import App from "./App";
-import { fetchAdhoc, fetchBoard } from "../reducers/app_thunks";
+import { fetchBoard } from "../reducers/app_thunks";
 import { currentParamsSelector } from "../selectors/appStateSelector";
 import { log } from "../utils/log";
 import {
@@ -16,8 +15,6 @@ const mapStateToProps = (state, ownProps) => {
     const { appState } = state,
         { locale } = appState,
         i18n = all[locale];
-
-    console.log("i18n", locale, all, i18n);
 
     return {
         ...currentParamsSelector(state),

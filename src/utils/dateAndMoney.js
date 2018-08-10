@@ -171,6 +171,8 @@ export const money = (sum, locale) => {
         case "he":
             output = "₪" + output.replace(/[\s₪]+/gi, "");
             break;
+        default:
+            break;
     }
 
     return output;
