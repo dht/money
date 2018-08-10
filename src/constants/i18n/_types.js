@@ -34,6 +34,7 @@ export type i18nType = {
     add: string,
     minutes: string,
     hours: string,
+    days: string,
     planned: string,
     actual: string,
     salaryPercent: string,

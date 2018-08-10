@@ -1,3 +1,5 @@
+before_script:
+  - yarn build
 deploy:
   provider: firebase
   token:

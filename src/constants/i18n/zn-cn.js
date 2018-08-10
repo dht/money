@@ -35,6 +35,7 @@ export default {
     add: "添加",
     minutes: "分钟",
     hours: "小时",
+    days: "天",
     planned: "已计划",
     actual: "实际",
     salaryPercent: "工资的百分比",
@@ -56,4 +57,21 @@ export default {
     cancel: "取消",
     until: " - ",
     of: ""
+};
+
+export const categories = {
+    c1: "旅行",
+    c2: "电脑",
+    c3: "账户",
+    c4: "租金",
+    c5: "超市",
+    c6: "餐馆",
+    c7: "爱好",
+    c8: "众议院",
+    c9: "储蓄",
+    c10: "健康",
+    c11: "修炼",
+    c12: "娱乐",
+    c13: "其他",
+    c14: "收入"
 };

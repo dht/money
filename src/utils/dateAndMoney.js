@@ -104,7 +104,7 @@ export const monthRange = month => {
         .month(month - 1)
         .endOf("month");
 
-    return " - " + to.format("D");
+    return to.format("D");
 };
 
 export const monthHeader = month => {
@@ -124,9 +124,9 @@ const localeToCurrency = locale => {
         case "it":
             return "EUR";
         case "zn-cn":
-            return "CNX";
+            return "CNY";
         case "he":
-            return "NIS";
+            return "ILS";
         case "en-gb":
             return "GBP";
         case "hi":
@@ -136,13 +136,42 @@ const localeToCurrency = locale => {
     }
 };
 
-export const money = (sum, locale) => {
-    return sum.toLocaleString(locale, {
-        style: "currency",
-        currency: localeToCurrency(locale)
-    });
+export const getCurrencySign = locale => {
+    switch (locale) {
+        case "en":
+            return "$";
+        case "nl":
+        case "es":
+        case "fr":
+        case "de":
+        case "it":
+            return "€";
+        case "zn-cn":
+            return "¥";
+        case "he":
+            return "₪";
+        case "en-gb":
+            return "£";
+        case "hi":
+            return "₹";
+        default:
+            return "$";
+    }
 };
 
-export const currencySign = locale => {
-    return money(0, locale);
+export const money = (sum, locale) => {
+    let output = sum.toLocaleString(locale, {
+        style: "currency",
+        currency: localeToCurrency(locale),
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0
+    });
+
+    switch (locale) {
+        case "he":
+            output = "₪" + output.replace(/[\s₪]+/gi, "");
+            break;
+    }
+
+    return output;
 };

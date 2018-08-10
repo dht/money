@@ -4,9 +4,13 @@ import App from "./App";
 import { fetchAdhoc, fetchBoard } from "../reducers/app_thunks";
 import { currentParamsSelector } from "../selectors/appStateSelector";
 import { log } from "../utils/log";
-import {setCurrency, setLocale, setShowList} from "../reducers/appState/appState_actions";
+import {
+    setCurrency,
+    setLocale,
+    setShowList
+} from "../reducers/appState/appState_actions";
 import all from "../constants/i18n";
-import {currencySign} from "../utils/dateAndMoney";
+import { getCurrencySign } from "../utils/dateAndMoney";
 
 const mapStateToProps = (state, ownProps) => {
     const { appState } = state,
@@ -47,7 +51,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
             dispatch(setShowList(true));
         },
         setLocale: locale => {
-            const currencySign = currencySign(locale);
+            const currencySign = getCurrencySign(locale);
             localStorage.setItem("locale", locale);
             localStorage.setItem("currency", currencySign);
             dispatch(setLocale(locale));

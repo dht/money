@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./Resource.css";
+import {money} from "../../../utils/dateAndMoney";
 
 export class Resource extends Component {
     onClick = () => {
@@ -10,7 +11,7 @@ export class Resource extends Component {
 
     render() {
         let {
-                unit,
+                locale,
                 className,
                 value = "",
                 abs,
@@ -44,8 +45,7 @@ export class Resource extends Component {
         if (value === 0 || isNaN(value)) {
             text = "-";
         } else {
-            value = value.toLocaleString();
-            text = `${unit}${value}`;
+            text = money(value, locale);
         }
 
         return (

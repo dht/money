@@ -22,5 +22,13 @@ export const getStorageKey = (key, defaultValue) => {
 
     output = localStorage.getItem(key);
 
+    return output !== null ? output : defaultValue;
+};
+
+export const getStorageBool = (key, defaultValue) => {
+    let output;
+
+    output = localStorage.getItem(key);
+
     return output !== null ? output === "true" : defaultValue;
 };

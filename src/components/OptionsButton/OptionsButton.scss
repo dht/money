@@ -12,11 +12,12 @@
   position: relative;
 
   ul.options {
+    list-style-type:none;
     display: none;
     position: absolute;
     background-color: #333;
     bottom: 25px;
-    left: 0;
+    right: 0;
     width: 130px;
     padding: 0;
     margin: 5px 0;
@@ -36,6 +37,15 @@
   &.selected {
     ul.options {
       display: block;
+    }
+  }
+}
+
+.App.rtl {
+  .OptionsButton-container {
+    ul.options {
+      left: 0;
+      right: auto;
     }
   }
 }

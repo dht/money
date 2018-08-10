@@ -1,9 +1,13 @@
 .Percent-container {
   width: 100px;
   text-align: right;
-  margin-left: 10px; }
+  margin-right: 10px; }
   .Percent-container .value2 {
     font-size: 12px;
     padding: 0 5px; }
+
+.App.rtl .Percent-container {
+  margin-left: auto;
+  margin-right: 10px; }
 
 /*# sourceMappingURL=Percent.css.map */

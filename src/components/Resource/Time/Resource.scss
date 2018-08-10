@@ -1,10 +1,24 @@
 .Resource-container {
   width: 100px;
   text-align: right;
-  margin-left: 10px;
+  margin-right: 10px;
   font-family: "Courier New", Courier, monospace;
 
   &.clickable {
     cursor: pointer;
+  }
+}
+
+.App.rtl {
+  .Resource-container {
+    text-align: right;
+  }
+}
+
+.App.rtl {
+  .Resource-container {
+    text-align: right;
+    margin-right: auto;
+    margin-left: 10px;
   }
 }

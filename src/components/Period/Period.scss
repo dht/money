@@ -1,67 +1,85 @@
 .Period-container {
-  padding: 10px 40px;
-  position: relative;
+    padding: 10px 40px;
+    position: relative;
 
-  .row {
-    display: flex;
-    padding:2px 0;
+    .row {
+        display: flex;
+        padding: 2px 0;
 
-    .category-title {
-      width:170px;
+        .category-title {
+            width: 170px;
+        }
+
+        &.header {
+            border-bottom: 1px solid gray;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+
+            .th {
+                width: 100px;
+                text-align: center;
+                margin-right: 25px;
+            }
+        }
+
+        &.summary {
+            border-top: 1px solid gray;
+            margin-top: 10px;
+            padding-top: 10px;
+        }
     }
 
-    &.header {
-      border-bottom: 1px solid gray;
-      margin-bottom: 10px;
-      padding-bottom:10px;
-
-      .th {
-        width: 100px;
-        text-align: center;
-        margin-left: 25px;
-      }
+    .actions {
+        margin-top: 20px;
+        display: flex;
+        flex: 1;
     }
 
-    &.summary {
-      border-top: 1px solid gray;
-      margin-top: 10px;
-      padding-top:10px;
+    .top-actions {
+        position: absolute;
+        top: -40px;
+        right: 0;
     }
-  }
 
-  .actions {
-    margin-top:20px;
-    display: flex;
-    flex:1;
-  }
-
-  .top-actions {
-    position: absolute;
-    top:-40px;
-    left:0;
-  }
-
-  &.hide-a {
-    .a {
-      display: none;
+    &.hide-a {
+        .a {
+            display: none;
+        }
     }
-  }
 
-  &.hide-ap {
-    .ap {
-      display: none;
+    &.hide-ap {
+        .ap {
+            display: none;
+        }
     }
-  }
 
-  &.hide-p {
-    .p {
-      display: none;
+    &.hide-p {
+        .p {
+            display: none;
+        }
     }
-  }
 
-  &.hide-pp {
-    .pp {
-      display: none;
+    &.hide-pp {
+        .pp {
+            display: none;
+        }
     }
-  }
+}
+
+.App.rtl {
+    .Period-container {
+        .row {
+            &.header {
+                .th {
+                    margin-right: auto;
+                    margin-left: 25px;
+                }
+            }
+        }
+
+        .top-actions {
+            left: 0;
+            right: auto;
+        }
+    }
 }

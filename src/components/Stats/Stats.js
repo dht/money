@@ -19,7 +19,7 @@ class Stats extends Component {
         const { showSettings } = this.state;
 
         return (
-            <div className={`Stats-container adhoc`}>
+            <div className={`Stats-container page-structure adhoc`}>
                 <div className="list">
                     <WeekHeader onChange={this.props.onPeriodChange} />
 

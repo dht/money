@@ -77,6 +77,10 @@ class App extends Component {
         };
     };
 
+    defaultProps = {
+        i18n: {}
+    };
+
     state = {
         boardId: null,
         locale: "en"

@@ -13,7 +13,7 @@
       .Period-container .row.header .th {
         width: 100px;
         text-align: center;
-        margin-left: 25px; }
+        margin-right: 25px; }
     .Period-container .row.summary {
       border-top: 1px solid gray;
       margin-top: 10px;
@@ -25,7 +25,7 @@
   .Period-container .top-actions {
     position: absolute;
     top: -40px;
-    left: 0; }
+    right: 0; }
   .Period-container.hide-a .a {
     display: none; }
   .Period-container.hide-ap .ap {
@@ -34,5 +34,12 @@
     display: none; }
   .Period-container.hide-pp .pp {
     display: none; }
+
+.App.rtl .Period-container .row.header .th {
+  margin-right: auto;
+  margin-left: 25px; }
+.App.rtl .Period-container .top-actions {
+  left: 0;
+  right: auto; }
 
 /*# sourceMappingURL=Period.css.map */

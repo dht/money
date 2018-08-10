@@ -1,10 +1,11 @@
 .Line-container {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  padding-left: 10px !important; }
   .Line-container .date, .Line-container .title, .Line-container .plus, .Line-container .minues {
     padding: 0 5px; }
   .Line-container .date {
-    padding-right: 20px;
+    padding-left: 20px;
     width: 85px;
     font-family: "Courier New", Courier, monospace; }
   .Line-container .title {
@@ -14,5 +15,11 @@
     padding: 0 10px; }
     .Line-container .actions .material-icons {
       opacity: 0.6; }
+
+.App.rtl .Line-container {
+  padding-right: 10px !important; }
+  .App.rtl .Line-container .date {
+    padding-left: 0;
+    padding-right: 20px; }
 
 /*# sourceMappingURL=Line.css.map */

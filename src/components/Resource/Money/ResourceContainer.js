@@ -4,10 +4,10 @@ import Money from "./Resource";
 
 const mapStateToProps = (state, ownProps) => {
     const { appState } = state,
-        { currency } = appState;
+        { locale } = appState;
 
     return {
-        unit: currency
+        locale
     };
 };
 

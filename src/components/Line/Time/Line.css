@@ -1,6 +1,7 @@
 .Line-container {
   display: flex;
-  align-items: center; }
+  align-items: center;
+  padding-left: 10px !important; }
   .Line-container.done {
     color: lightgreen !important;
     text-decoration-line: line-through;
@@ -24,11 +25,13 @@
     .Line-container .actions .material-icons {
       opacity: 0.6; }
 
-.App.rtl .Line-container .date {
-  padding-left: 0;
-  padding-right: 20px; }
-.App.rtl .Line-container .extra {
-  padding-right: 0;
-  padding-left: 5px; }
+.App.rtl .Line-container {
+  padding-right: 10px !important; }
+  .App.rtl .Line-container .date {
+    padding-left: 0;
+    padding-right: 20px; }
+  .App.rtl .Line-container .extra {
+    padding-right: 0;
+    padding-left: 5px; }
 
 /*# sourceMappingURL=Line.css.map */

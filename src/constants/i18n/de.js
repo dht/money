@@ -35,6 +35,7 @@ export default {
     add: "Hinzufügen",
     minutes: "Minuten",
     hours: "Stunden",
+    days: "Tage",
     planned: "Geplant",
     actual: "Ist",
     salaryPercent: "% des Gehalts",
@@ -56,4 +57,21 @@ export default {
     cancel: "Abbrechen",
     until: "-",
     of: ""
+};
+
+export const categories = {
+    c1: "Reisen",
+    c2: "Computer",
+    c3: "Konten",
+    c4: "mieten",
+    c5: "Supermarkt",
+    c6: "Restaurants",
+    c7: "Hobbies",
+    c8: "Haus",
+    c9: "Einsparungen",
+    c10: "Gesundheit",
+    c11: "Anbau",
+    c12: "Unterhaltung",
+    c13: "Andere",
+    c14: "Einnahmen"
 };

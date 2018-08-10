@@ -35,6 +35,7 @@ export default {
     add: "Toevoegen",
     minutes: "Notulen",
     hours: "Uren",
+    days: "dagen",
     planned: "Gepland",
     actual: "Actueel",
     salaryPercent: "% van het salaris",
@@ -56,4 +57,21 @@ export default {
     cancel: "Annuleren",
     until: "-",
     of: ""
+};
+
+export const categories = {
+    c1: "Reizen",
+    c2: "Computer",
+    c3: "Accounts",
+    c4: "huur",
+    c5: "Supermarkt",
+    c6: "Restaurants",
+    c7: "Hobby's",
+    c8: "Huis",
+    c9: "Besparingen",
+    c10: "Gezondheid",
+    c11: "teelt",
+    c12: "Entertainment",
+    c13: "Andere",
+    c14: "Opbrengst"
 };

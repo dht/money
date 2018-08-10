@@ -88,7 +88,7 @@ export class New extends Component {
                         onEnter={this.save}
                     />
                 )}
-                <button onClick={this.save}>{i18n.add}</button>
+                <button onClick={this.save}>+</button>
             </div>
         );
     }

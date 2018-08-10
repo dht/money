@@ -1,6 +1,6 @@
 import { getPeriodNumber, getWeekNumber } from "../../utils/dateAndMoney";
 import { modes, planningModes } from "../../constants/constants";
-import { getStorageKey } from "../../utils/storage";
+import { getStorageBool, getStorageKey } from "../../utils/storage";
 
 export const initialState = {
     mode: modes.TIME,
@@ -10,8 +10,8 @@ export const initialState = {
     currentPeriod: getPeriodNumber(),
     isLoading: true,
     isAdhoc: false,
-    showList: getStorageKey("showList", true),
-    showPage: getStorageKey("showPage", true),
+    showList: getStorageBool("showList", true),
+    showPage: getStorageBool("showPage", true),
     currency: getStorageKey("currency", "$"),
     timeUnit: "",
     locale: getStorageKey("locale", "en"),
@@ -163,7 +163,7 @@ const appState = (state = initialState, action) => {
         case ActionTypes.SET_CURRENCY:
             return {
                 ...state,
-                locale: action.value
+                currency: action.value
             };
 
         case ActionTypes.SET_IS_ADHOC:

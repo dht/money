@@ -6,7 +6,11 @@
   .Graph-container .time-buttons {
     position: fixed;
     bottom: 10px;
-    left: 10px;
+    right: 10px;
     display: flex; }
+
+.App.rtl .Graph-container .time-buttons {
+  right: auto;
+  left: 10px; }
 
 /*# sourceMappingURL=Graph.css.map */

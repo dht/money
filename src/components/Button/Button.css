@@ -11,11 +11,11 @@
   position: relative;
   display: flex;
   flex: 1;
-  margin-left: 10px; }
+  margin-right: 10px; }
   .Button-container i {
     font-size: 25px; }
   .Button-container .title {
-    margin-right: 10px; }
+    margin-left: 10px; }
   .Button-container.icon {
     background-color: transparent;
     padding: 3px;
@@ -54,7 +54,7 @@
     width: 24px;
     height: 24px;
     margin-top: -12px;
-    margin-left: -12px; }
+    margin-right: -12px; }
   .Button-container.round {
     margin-top: 30px;
     border: 1px solid #333;
@@ -78,5 +78,15 @@
       font-size: 30px; }
     .Button-container.light:hover {
       background-color: rgba(0, 0, 0, 0.05); }
+
+.App.rtl .Button-container {
+  margin-right: auto;
+  margin-left: 10px; }
+  .App.rtl .Button-container .title {
+    margin-left: auto;
+    margin-right: 10px; }
+  .App.rtl .Button-container .spinner {
+    margin-right: auto;
+    margin-left: -12px; }
 
 /*# sourceMappingURL=Button.css.map */
