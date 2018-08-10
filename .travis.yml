@@ -1,5 +1,5 @@
 before_script:
-  - yarn build
+  - npm run-script build
 deploy:
   provider: firebase
   token:
