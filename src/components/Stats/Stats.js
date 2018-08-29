@@ -9,6 +9,7 @@ import Button from "../Button/Button";
 import WeekHeader from "../TimeHeader/PeriodHeaderContainer";
 import Settings from "../Settings/SettingsContainer";
 import ViewToggler from "../ViewToggler/ViewToggler";
+import Table from "../Table/TableContainer";
 
 class Stats extends Component {
     state = {
@@ -35,8 +36,8 @@ class Stats extends Component {
                     </div>
                 </div>
                 <div className="content">
-                    <Pie />
-                    <Graph />
+                    {/* <Pie /> */}
+                    <Table />
 
                     {showSettings ? (
                         <Settings

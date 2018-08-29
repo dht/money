@@ -5,6 +5,7 @@
   justify-content: center; }
   .Spinner-container .spinner {
     animation: rotator 1.4s linear infinite; }
+
 @keyframes rotator {
   0% {
     transform: rotate(0deg); }
@@ -15,6 +16,7 @@
     stroke-dashoffset: 0;
     transform-origin: center;
     animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite; }
+
 @keyframes colors {
   0% {
     stroke: #4285F4; }
@@ -26,6 +28,7 @@
     stroke: #1B9A59; }
   100% {
     stroke: #4285F4; } }
+
 @keyframes dash {
   0% {
     stroke-dashoffset: 187; }
@@ -35,5 +38,3 @@
   100% {
     stroke-dashoffset: 187;
     transform: rotate(450deg); } }
-
-/*# sourceMappingURL=Spinner.css.map */

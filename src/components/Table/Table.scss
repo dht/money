@@ -1,0 +1,39 @@
+.Table-container {
+    flex: 1;
+    padding: 50px;
+    background-color: #444;
+    color: white;
+    overflow: auto;
+
+    table {
+        padding: 10px;
+        padding: 0;
+        margin: 0;
+
+        th {
+            padding-bottom:10px;
+        }
+
+        td {
+            padding:3px 5px;
+        }
+
+        td:nth-child(1) {
+            width: 150px;
+        }
+        td:nth-child(2) {
+            width: 50px;
+        }
+        td:nth-child(3) {
+            width: 140px;
+        }
+        td:nth-child(4) {
+            width: 140px;
+        }
+
+        .future + tr td {
+            background-color:purple;
+            padding:7px 5px;
+        }
+    }
+}

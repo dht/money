@@ -16,8 +16,7 @@
 .App.rtl .Menu-container.down {
   left: 5px;
   right: auto; }
+
 .App.rtl .Menu-container.up {
   right: 20px;
   left: auto; }
-
-/*# sourceMappingURL=Menu.css.map */
